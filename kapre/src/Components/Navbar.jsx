@@ -149,7 +149,7 @@ export const Navbar = () =>{
           <div className="mega-box" >
                 <div className="content" >
                   <div className="row" >
-                    <img src="d1.jpg"/>
+                    <img src="3.jpg"/>
                   </div>
                   <div className="row" >
                  

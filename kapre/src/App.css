@@ -287,3 +287,35 @@ nav .wrapper{
 nav input{
   display: none;
 }
+.slider-container {
+  width: 100%;
+  margin: auto;
+  padding: 20px 0px;
+}
+.slider-container div{
+  padding: 3px;
+}
+.slider-container div h3{
+  font-size: 16px;
+}
+.slider-container img{
+  border-radius: 50%;
+  width: 60%;
+}
+
+.slick-slide h3 {
+  padding: 20px 0;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+

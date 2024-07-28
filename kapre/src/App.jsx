@@ -1,6 +1,9 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import AutoPlay from "./Components/Autoplay";
 import { Navbar } from "./Components/Navbar";
 
 import './App.css';
@@ -39,7 +42,7 @@ function App() {
   </button>
 </div>
 
-<div className="page2">This is page 2</div>
+<AutoPlay />
     </>
   );
 }
