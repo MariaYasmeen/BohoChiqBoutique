@@ -17,18 +17,12 @@ function App() {
     <div className="carousel-item active">
       <img src="/1.jpg" className="d-block w-100 img-fluid" alt="..." />
     </div>
-  
+    <div className="carousel-item active">
+      <img src="/d2.jpg" className="d-block w-100 img-fluid" alt="..." />
+    </div>
     <div className="carousel-item">
       <img src="/2.jpg" className="d-block w-100 img-fluid" alt="..." />
     </div>
-   
-    <div className="carousel-item">
-      <img src="/d2.webp" className="d-block w-100 img-fluid" alt="..." />
-    </div>
-    <div className="carousel-item">
-      <img src="/new.jpg" className="d-block w-100 img-fluid" alt="..." />
-    </div>
-   
    
   </div>
   <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">

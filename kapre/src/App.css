@@ -82,7 +82,7 @@ nav .wrapper{
 .drop-menu li a{
   width: 100%;
   display: block;
-  padding: 0 0 0 15px;
+  padding: 0 0 0 125px;
   font-weight: 400;
   border-radius: 0px;
   color: black;
@@ -91,7 +91,7 @@ nav .wrapper{
   position: absolute;
   left: 0;
   width: 100%;
-  padding: 0 30px;
+  padding: 0 300px;
   color: black;
   top: 85px;
   opacity: 0;
@@ -99,31 +99,25 @@ nav .wrapper{
 }
 .mega-box .content{
   background-color: white;
-  padding: 25px 20px;
+  padding: 12px;
   display: flex;
   color: black;
   width: 100%;
   box-shadow: 0 6px 10px rgba(0,0,0,0.15);
 }
 .mega-box .content .row{
-  width: calc(25% - 30px);
-  line-height: 45px;
-}
-.content .row header{
-  color:black;
-  font-size: 20px;
-  font-weight: 500;
+  width: calc(55% - 30px);
+  line-height: 27px;
 }
 .content .row .mega-links{
-  margin-left: -40px;
-  border-left: 1px solid rgba(255,255,255,0.09);
+  margin-left: -20px;
 }
 .row .mega-links li{
-  padding: 0 20px;
+  padding: 0 48px;
 }
 .row .mega-links li a{
   padding: 0px;
-  padding: 0 5px;
+  padding: 0px;
   color: black;
   font-size: 12px;
   display: block;
@@ -175,8 +169,8 @@ nav .wrapper{
     transition: all 0.3s ease;
   }
   .content .row img{
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     object-fit: cover;
   }
   /* custom scroll bar */
@@ -266,7 +260,7 @@ nav .wrapper{
   .mega-box .content{
     box-shadow: none;
     flex-direction: column;
-    padding: 20px 20px 0 20px;
+    padding: 30px 40px 50 40px;
   }
   .mega-box .content .row{
     width: 100%;
@@ -287,7 +281,7 @@ nav .wrapper{
     margin: 0;
   }
   .content .row header{
-    font-size: 19px;
+    font-size: 12px;
   }
 }
 nav input{

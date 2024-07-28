@@ -26,7 +26,7 @@ export const Header = () => {
               className="blog-header-logo text-body-emphasis text-decoration-none hero-txt"
               href="#"
             >
-              FashionKulture
+              Fashion Kulture
             </a>
           </div>
           <div className="col-4 d-flex justify-content-end align-items-center">
@@ -69,50 +69,13 @@ export const Header = () => {
             </label>
             <li>
               <a href="#">new </a>
-            </li>
-            <li>
-              <a href="#">unstitched</a>
-            </li>
-            <li>
-              <a href="#" className="desktop-item">
-                wear
-              </a>
-              <input type="checkbox" id="showDrop" />
-              <label htmlFor="showDrop" className="mobile-item">
-                kids
-              </label>
-              
-              <ul className="drop-menu">
-                <li>
-                  <a href="#">Drop menu 1</a>
-                </li>
-                <li>
-                  <a href="#">Drop menu 2</a>
-                </li>
-                <li>
-                  <a href="#">Drop menu 3</a>
-                </li>
-                <li>
-                  <a href="#">Drop menu 4</a>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <a href="#" className="desktop-item">
-                menswear
-              </a>
-              <input type="checkbox" id="showMega" />
-              <label htmlFor="showMega" className="mobile-item">
-                Mega Menu
-              </label>
-              <div className="mega-box">
-                <div className="content">
-                  <div className="row">
+              <div className="mega-box" style={{left: "-210px"}} >
+                <div className="content" >
+                  <div className="row" >
                     <img src="1.jpg"/>
                   </div>
-                  <div className="row">
-                    <header>Design Services</header>
+                  <div className="row" >
+                 
                     <ul className="mega-links">
                       <li>
                         <a href="#">Graphics</a>
@@ -121,44 +84,132 @@ export const Header = () => {
                         <a href="#">Vectors</a>
                       </li>
                       <li>
-                        <a href="#">Business cards</a>
+                        <a href="#">Business </a>
                       </li>
                       <li>
-                        <a href="#">Custom logo</a>
+                        <a href="#">Custom </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="row" >
+                 
+                 <ul className="mega-links">
+                   <li>
+                     <a href="#">Graphics</a>
+                   </li>
+                   <li>
+                     <a href="#">Vectors</a>
+                   </li>
+                   <li>
+                     <a href="#">Business </a>
+                   </li>
+                   <li>
+                     <a href="#">Custom </a>
+                   </li>
+                 </ul>
+               </div>
+                  </div>
+                  </div>
+            </li>
+            <li>
+              <a href="#">unstitched</a>
+            </li>
+            <li>
+              <a href="#">stitched</a>
+            </li>
+            <li>
+              <a href="#">stitched</a>
+            </li>
+
+            <li>
+              <a href="#" className="desktop-item">
+                menswear
+              </a>
+              <input type="checkbox" id="showMega" />
+              <div className="mega-box"  >
+                <div className="content" >
+                  <div className="row" >
+                    <img src="d2.jpg"/>
+                  </div>
+                  <div className="row" >
+                 
+                    <ul className="mega-links"   style={{left: "-160px"}} >
+                      <li>
+                        <a href="#">M.Prints</a>
+                      </li>
+                      <li>
+                        <a href="#">Mbroidered</a>
+                      </li>
+                      <li>
+                        <a href="#">Linen</a>
+                      </li>
+                      <li>
+                        <a href="#">Chiffon </a>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                  </div>
+             
+            </li>
+
+            <li>
+              <a href="#" className="desktop-item">
+               kids
+              </a>
+              <input type="checkbox" id="showMega" />
+              <div className="mega-box" >
+                <div className="content" >
+                  <div className="row" >
+                    <img src="d1.jpg"/>
+                  </div>
+                  <div className="row" >
+                 
+                    <ul className="mega-links"  style={{left: "-180px"}} >
+                      <li>
+                        <a href="#">Luxury Formals</a>
+                      </li>
+                      <li>
+                        <a href="#">Mommy & Me</a>
+                      </li>
+                      <li>
+                        <a href="#">Luxury Pret</a>
+                      </li>
+                      <li>
+                        <a href="#">View </a>
                       </li>
                     </ul>
                   </div>
                   <div className="row">
-                    <header>Email Services</header>
-                    <ul className="mega-links">
+                     <ul className="mega-links">
                       <li>
-                        <a href="#">Personal Email</a>
+                        <a href="#">Personal</a>
                       </li>
                       <li>
-                        <a href="#">Business Email</a>
+                        <a href="#">Business </a>
                       </li>
                       <li>
-                        <a href="#">Mobile Email</a>
+                        <a href="#">Mobile </a>
                       </li>
                       <li>
-                        <a href="#">Web Marketing</a>
+                        <a href="#"> Marketing</a>
                       </li>
                     </ul>
                   </div>
                   <div className="row">
-                    <header>Security services</header>
+                   
                     <ul className="mega-links">
                       <li>
-                        <a href="#">Site Seal</a>
+                        <a href="#">Site </a>
                       </li>
                       <li>
-                        <a href="#">VPS Hosting</a>
+                        <a href="#"> Hosting</a>
                       </li>
                       <li>
-                        <a href="#">Privacy Seal</a>
+                        <a href="#">Privacy </a>
                       </li>
                       <li>
-                        <a href="#">Website design</a>
+                        <a href="#">Website </a>
                       </li>
                     </ul>
                   </div>
@@ -167,9 +218,91 @@ export const Header = () => {
             </li>
             <li>
               <a href="#">couture</a>
+              <div className="mega-box" style={{left: "-10px"}} >
+                <div className="content" >
+                  <div className="row" >
+                    <img src="1.jpg"/>
+                  </div>
+                  <div className="row" >
+                 
+                    <ul className="mega-links">
+                      <li>
+                        <a href="#">Graphics</a>
+                      </li>
+                      <li>
+                        <a href="#">Vectors</a>
+                      </li>
+                      <li>
+                        <a href="#">Business </a>
+                      </li>
+                      <li>
+                        <a href="#">Custom </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="row" >
+                 
+                 <ul className="mega-links">
+                   <li>
+                     <a href="#">Graphics</a>
+                   </li>
+                   <li>
+                     <a href="#">Vectors</a>
+                   </li>
+                   <li>
+                     <a href="#">Business </a>
+                   </li>
+                   <li>
+                     <a href="#">Custom </a>
+                   </li>
+                 </ul>
+               </div>
+                  </div>
+                  </div>
             </li>
             <li>
               <a href="#">bridals</a>
+              <div className="mega-box" style={{left: "-210px"}} >
+                <div className="content" >
+                  <div className="row" >
+                    <img src="1.jpg"/>
+                  </div>
+                  <div className="row" >
+                 
+                    <ul className="mega-links">
+                      <li>
+                        <a href="#">Graphics</a>
+                      </li>
+                      <li>
+                        <a href="#">Vectors</a>
+                      </li>
+                      <li>
+                        <a href="#">Business </a>
+                      </li>
+                      <li>
+                        <a href="#">Custom </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="row" >
+                 
+                 <ul className="mega-links">
+                   <li>
+                     <a href="#">Graphics</a>
+                   </li>
+                   <li>
+                     <a href="#">Vectors</a>
+                   </li>
+                   <li>
+                     <a href="#">Business </a>
+                   </li>
+                   <li>
+                     <a href="#">Custom </a>
+                   </li>
+                 </ul>
+               </div>
+                  </div>
+                  </div>
             </li>
             <li>
               <a href="#">jewelrey</a>
@@ -180,12 +313,12 @@ export const Header = () => {
                 <div className="content">
                   <div className="row">
                     <img
-                      src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg"
+                      src="d1.jpg"
                       alt=""
                     />
                   </div>
                   <div className="row">
-                    <header>Design Services</header>
+                 
                     <ul className="mega-links">
                       <li>
                         <a href="#">Graphics</a>
@@ -194,16 +327,20 @@ export const Header = () => {
                         <a href="#">Vectors</a>
                       </li>
                       <li>
-                        <a href="#">Business cards</a>
+                        <a href="#">Business </a>
                       </li>
                       <li>
-                        <a href="#">Custom logo</a>
+                        <a href="#">Custom </a>
                       </li>
+                      
                     </ul>
-                  </div>
+                    <img
+                      src="1.jpg"
+                      alt=""
+                    />
+                                      </div>
                   <div className="row">
-                    <header>Email Services</header>
-                    <ul className="mega-links">
+                         <ul className="mega-links">
                       <li>
                         <a href="#">Personal Email</a>
                       </li>
@@ -217,6 +354,10 @@ export const Header = () => {
                         <a href="#">Web Marketing</a>
                       </li>
                     </ul>
+                    <img
+                      src="1.jpg"
+                      alt=""
+                    />
                   </div>
                 
                 </div>
@@ -224,6 +365,47 @@ export const Header = () => {
             </li>
             <li>
               <a href="#">perfumes</a>
+              <div className="mega-box" style={{left: "-21px"}} >
+                <div className="content" >
+                  <div className="row" >
+                    <img src="3.jpg"/>
+                  </div>
+                  <div className="row" >
+                 
+                    <ul className="mega-links">
+                      <li>
+                        <a href="#">Graphics</a>
+                      </li>
+                      <li>
+                        <a href="#">Vectors</a>
+                      </li>
+                      <li>
+                        <a href="#">Business </a>
+                      </li>
+                      <li>
+                        <a href="#">Custom </a>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="row" >
+                 
+                 <ul className="mega-links">
+                   <li>
+                     <a href="#">Graphics</a>
+                   </li>
+                   <li>
+                     <a href="#">Vectors</a>
+                   </li>
+                   <li>
+                     <a href="#">Business </a>
+                   </li>
+                   <li>
+                     <a href="#">Custom </a>
+                   </li>
+                 </ul>
+               </div>
+                  </div>
+                  </div>
             </li>
             <li>
               <a href="#">sale</a>
