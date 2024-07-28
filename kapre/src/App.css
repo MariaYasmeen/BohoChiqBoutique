@@ -289,14 +289,14 @@ nav input{
 }
 .slider-container {
   width: 100%;
-  margin: auto;
   padding: 20px 0px;
 }
-.slider-container div{
-  padding: 3px;
+.slider-container img{
+  margin: 3px;
+  padding: 12px;
 }
 .slider-container div h3{
-  font-size: 16px;
+  font-size: 13px;
 }
 .slider-container img{
   border-radius: 50%;
@@ -304,7 +304,7 @@ nav input{
 }
 
 .slick-slide h3 {
-  padding: 20px 0;
+  padding: 3px 0;
   text-align: center;
 }
 

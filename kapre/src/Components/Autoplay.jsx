@@ -5,24 +5,25 @@ function AutoPlay() {
   const settings = {
     dots: true,
     infinite: true,
-    slidesToShow: 4,
+    slidesToShow: 6,
     slidesToScroll: 1,
     autoplay: true,
-    speed: 3000,
+    speed: 5000,
     autoplaySpeed: 7000,
     cssEase: "linear"
   };
   return (
-    <>
-    <center><h3 style={{marginTop:"30px"}}>Featured Designs</h3></center>
-    <div className="slider-container">
+    <div style={{marginTop:"23px"}}>
+    
+    <center><h3 >Featured Designs</h3></center>
+    <div className="slider-container" >
       <Slider {...settings}>
         <div>
         <img src="/lux.png" className="d-block w-100 img-fluid" alt="..." />
           <h3>LUXURY FORMALS</h3>
         </div>
         <div>
-        <img src="/luxpret.png" className="d-block w-100 img-fluid" alt="..." />
+        <img src="/3.jpg" className="d-block w-100 img-fluid" alt="..." />
           <h3>LUXURY PRET</h3>
         </div>
         <div>
@@ -42,7 +43,7 @@ function AutoPlay() {
           <h3>UNSTITCHED</h3>
         </div>
         <div>
-        <img src="/jewl.png" className="d-block w-100 img-fluid" alt="..." />
+        <img src="/jew.png" className="d-block w-100 img-fluid" alt="..." />
           <h3>JEWELRY</h3>
         </div>
         <div>
@@ -51,7 +52,7 @@ function AutoPlay() {
         </div>
               </Slider>
     </div>
-    </>
+    </div>
     );
 }
 
