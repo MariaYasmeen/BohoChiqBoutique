@@ -1,27 +1,31 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { Header } from "./Components/Header";
+import { Navbar } from "./Components/Navbar";
 
 import './App.css';
 
 function App() {
   return (
     <>
-      <Header />
-  
-
+<Navbar />
 
 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src="/1.jpg" className="d-block w-100 img-fluid" alt="..." />
+      <img src="/slider3.png" className="d-block w-100 img-fluid" alt="..." />
     </div>
     <div className="carousel-item active">
-      <img src="/d2.jpg" className="d-block w-100 img-fluid" alt="..." />
+      <img src="/slider1.png" className="d-block w-100 img-fluid" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src="/2.jpg" className="d-block w-100 img-fluid" alt="..." />
+      <img src="/slider2.png" className="d-block w-100 img-fluid" alt="..." />
+    </div>
+    <div className="carousel-item">
+      <img src="/slider4.png" className="d-block w-100 img-fluid" alt="..." />
+    </div>
+    <div className="carousel-item">
+      <img src="/slider5.png" className="d-block w-100 img-fluid" alt="..." />
     </div>
    
   </div>
@@ -34,6 +38,8 @@ function App() {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
+
+<div className="page2">This is page 2</div>
     </>
   );
 }

@@ -1,7 +1,7 @@
-export const Header = () => {
-  return (
-    <>
-      <header className="py-1" style={{ backgroundColor: "black" }}>
+export const Navbar = () =>{
+    return (
+        <>
+           <header className="py-1" style={{ backgroundColor: "black" }}>
         <div className="align-items-center">
           <div className="col-15 text-center top-navbar">
             <a className="text-decoration-none" style={{ color: "white" }}>
@@ -55,21 +55,29 @@ export const Header = () => {
           </div>
         </div>
       </header>
+      
+        <nav className="navbar wrapper navbar-expand-md  sticky-top " data-bs-theme="dark" style={{backgroundColor:"white", color:"white"}}>
+  <div className="container">
+    <a className="navbar-brand d-md-none" href="#">
+      Fashion Kulture
+    </a>
+    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon"></span>
+    </button>
+    <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+      <div className="offcanvas-header">
+    
+        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div className="offcanvas-body" style={{backgroundColor:"white", color:"white"}}>
+        <ul className="navbar-nav flex-grow-1 justify-content-between nav-links">
+          <li className="nav-item"><a className="nav-link" href="#">
+          </a></li>
 
 
+          <li className="nav-item"><a className="nav-link" href="#">new</a>
 
-      <nav>
-        <div className="wrapper">
-         
-          <input type="radio" name="slider" id="menu-btn" />
-          <input type="radio" name="slider" id="close-btn" />
-          <ul className="nav-links">
-            <label htmlFor="close-btn" className="btn close-btn">
-              <i className="fas fa-times"></i>
-            </label>
-            <li>
-              <a href="#">new </a>
-              <div className="mega-box" style={{left: "-210px"}} >
+          <div className="mega-box" style={{left: "-210px"}} >
                 <div className="content" >
                   <div className="row" >
                     <img src="1.jpg"/>
@@ -110,23 +118,9 @@ export const Header = () => {
                </div>
                   </div>
                   </div>
-            </li>
-            <li>
-              <a href="#">unstitched</a>
-            </li>
-            <li>
-              <a href="#">stitched</a>
-            </li>
-            <li>
-              <a href="#">stitched</a>
-            </li>
-
-            <li>
-              <a href="#" className="desktop-item">
-                menswear
-              </a>
-              <input type="checkbox" id="showMega" />
-              <div className="mega-box"  >
+          </li>
+          <li className="nav-item"><a className="nav-link" href="#">unstitched</a>
+          <div className="mega-box"  >
                 <div className="content" >
                   <div className="row" >
                     <img src="d2.jpg"/>
@@ -149,16 +143,10 @@ export const Header = () => {
                     </ul>
                   </div>
                   </div>
-                  </div>
-             
-            </li>
-
-            <li>
-              <a href="#" className="desktop-item">
-               kids
-              </a>
-              <input type="checkbox" id="showMega" />
-              <div className="mega-box" >
+                  </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">store</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">kids</a>
+          <div className="mega-box" >
                 <div className="content" >
                   <div className="row" >
                     <img src="d1.jpg"/>
@@ -214,11 +202,34 @@ export const Header = () => {
                     </ul>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li>
-              <a href="#">couture</a>
-              <div className="mega-box" style={{left: "-10px"}} >
+              </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">menswear</a>
+          <div className="mega-box" >
+                <div className="content" >
+                  <div className="row" >
+                    <img src="2.jpg"/>
+                  </div>
+                  <div className="row" >
+                 
+                    <ul className="mega-links"  style={{left: "-180px"}} >
+                      <li>
+                        <a href="#">Luxury Formals</a>
+                      </li>
+                      <li>
+                        <a href="#">Mommy & Me</a>
+                      </li>
+                      <li>
+                        <a href="#">Luxury Pret</a>
+                      </li>
+                      <li>
+                        <a href="#">View </a>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                  </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">couture</a>
+          <div className="mega-box" style={{left: "-10px"}} >
                 <div className="content" >
                   <div className="row" >
                     <img src="1.jpg"/>
@@ -258,11 +269,9 @@ export const Header = () => {
                  </ul>
                </div>
                   </div>
-                  </div>
-            </li>
-            <li>
-              <a href="#">bridals</a>
-              <div className="mega-box" style={{left: "-210px"}} >
+                  </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">bridals</a>
+          <div className="mega-box" style={{left: "-210px"}} >
                 <div className="content" >
                   <div className="row" >
                     <img src="1.jpg"/>
@@ -302,14 +311,10 @@ export const Header = () => {
                  </ul>
                </div>
                   </div>
-                  </div>
-            </li>
-            <li>
-              <a href="#">jewelrey</a>
-            </li>
-            <li>
-              <a href="#">accessories</a>
-              <div className="mega-box">
+                  </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">jewelry</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">accessories</a>
+          <div className="mega-box">
                 <div className="content">
                   <div className="row">
                     <img
@@ -361,11 +366,9 @@ export const Header = () => {
                   </div>
                 
                 </div>
-              </div>
-            </li>
-            <li>
-              <a href="#">perfumes</a>
-              <div className="mega-box" style={{left: "-21px"}} >
+              </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">perfumes</a>
+          <div className="mega-box" style={{left: "-21px"}} >
                 <div className="content" >
                   <div className="row" >
                     <img src="3.jpg"/>
@@ -405,17 +408,16 @@ export const Header = () => {
                  </ul>
                </div>
                   </div>
-                  </div>
-            </li>
-            <li>
-              <a href="#">sale</a>
-            </li>
-          </ul>
-          <label htmlFor="menu-btn" className="btn menu-btn">
-            <i className="fas fa-bars"></i>
-          </label>
-        </div>
-      </nav>
-    </>
-  );
-};
+                  </div></li>
+          <li className="nav-item"><a className="nav-link" href="#">sale</a></li>
+          <li className="nav-item"><a className="nav-link" href="#">
+         
+          </a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+        </>
+    )
+}
