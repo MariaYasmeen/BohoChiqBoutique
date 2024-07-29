@@ -71,16 +71,13 @@ export const Navbar = () =>{
       </div>
       <div className="offcanvas-body" style={{backgroundColor:"white", color:"white"}}>
         <ul className="navbar-nav flex-grow-1 justify-content-between nav-links">
-          <li className="nav-item"><a className="nav-link" href="#">
-          </a></li>
-
-
+        
           <li className="nav-item"><a className="nav-link" href="#">new</a>
 
           <div className="mega-box" style={{left: "-210px"}} >
                 <div className="content" >
                   <div className="row" >
-                    <img src="1.jpg"/>
+                    <img src="luxpt.png"/>
                   </div>
                   <div className="row" >
                  
@@ -122,8 +119,8 @@ export const Navbar = () =>{
           <li className="nav-item"><a className="nav-link" href="#">unstitched</a>
           <div className="mega-box"  >
                 <div className="content" >
-                  <div className="row" >
-                    <img src="d2.jpg"/>
+                  <div className="row" style={{width:"20%"}}>
+                    <img src="unstit.jpg"/>
                   </div>
                   <div className="row" >
                  
@@ -149,7 +146,7 @@ export const Navbar = () =>{
           <div className="mega-box" >
                 <div className="content" >
                   <div className="row" >
-                    <img src="3.jpg"/>
+                    <img src="kids.jpg"/>
                   </div>
                   <div className="row" >
                  
@@ -206,8 +203,8 @@ export const Navbar = () =>{
           <li className="nav-item"><a className="nav-link" href="#">menswear</a>
           <div className="mega-box" >
                 <div className="content" >
-                  <div className="row" >
-                    <img src="2.jpg"/>
+                  <div className="row"   style={{width:"30%"}}>
+                    <img src="dad.jpg"/>
                   </div>
                   <div className="row" >
                  
@@ -232,7 +229,7 @@ export const Navbar = () =>{
           <div className="mega-box" style={{left: "-10px"}} >
                 <div className="content" >
                   <div className="row" >
-                    <img src="1.jpg"/>
+                    <img src="luxury.png"/>
                   </div>
                   <div className="row" >
                  
@@ -274,7 +271,7 @@ export const Navbar = () =>{
           <div className="mega-box" style={{left: "-210px"}} >
                 <div className="content" >
                   <div className="row" >
-                    <img src="1.jpg"/>
+                    <img src="slider5.png"/>
                   </div>
                   <div className="row" >
                  
@@ -371,7 +368,7 @@ export const Navbar = () =>{
           <div className="mega-box" style={{left: "-21px"}} >
                 <div className="content" >
                   <div className="row" >
-                    <img src="3.jpg"/>
+                    <img src="perf.png"/>
                   </div>
                   <div className="row" >
                  
@@ -410,9 +407,7 @@ export const Navbar = () =>{
                   </div>
                   </div></li>
           <li className="nav-item"><a className="nav-link" href="#">sale</a></li>
-          <li className="nav-item"><a className="nav-link" href="#">
          
-          </a></li>
         </ul>
       </div>
     </div>

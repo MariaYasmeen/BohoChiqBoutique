@@ -26,7 +26,7 @@ function App() {
       <img src="/slider1.png" className="d-block w-100 img-fluid" alt="..." />
     </div>
     <div className="carousel-item">
-      <img src="/slider2.png" className="d-block w-100 img-fluid" alt="..." />
+      <img src="/slider5.png" className="d-block w-100 img-fluid" alt="..." />
     </div>
     <div className="carousel-item">
       <img src="/slider4.png" className="d-block w-100 img-fluid" alt="..." />

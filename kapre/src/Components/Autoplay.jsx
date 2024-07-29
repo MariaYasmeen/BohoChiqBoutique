@@ -28,11 +28,11 @@ function AutoPlay() {
         <a className="nav-link" href="#"><h3>LUXURY PRET</h3></a>
         </div>
         <div>
-        <img src="/kids.png" className="d-block w-100 img-fluid" alt="..." />
+        <img src="/kids.jpg" className="d-block w-100 img-fluid" alt="..." />
         <a className="nav-link" href="#"><h3>KIDS</h3></a>
         </div>
         <div>
-        <img src="/men.png" className="d-block w-100 img-fluid" alt="..." />
+        <img src="/dad.jpg" className="d-block w-100 img-fluid" alt="..." />
         <a className="nav-link" href="#"><h3>MENSWEAR</h3></a>
         </div>
         <div>
@@ -40,7 +40,7 @@ function AutoPlay() {
         <a className="nav-link" href="#"><h3>MOMMY & ME</h3></a>
         </div>
         <div>
-        <img src="/unstit.png" className="d-block w-100 img-fluid" alt="..." />
+        <img src="/unstit.jpg" className="d-block w-100 img-fluid" alt="..." />
         <a className="nav-link" href="#"><h3>UNSTITCHED</h3></a>
         </div>
         <div>

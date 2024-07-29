@@ -1,7 +1,7 @@
 export const Footer = () =>{
     return (
         <>
-        <div class="container" style={{marginTop:"20px"}}>
+        <div class="container" style={{marginTop:"100px"}}>
   <footer class="py-1">
     <div class="row">
       <div class=" col-md-3 mb-3">
