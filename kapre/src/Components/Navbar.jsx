@@ -61,13 +61,13 @@ export const Navbar = () =>{
     <a className="navbar-brand d-md-none" href="#">
       Fashion Kulture
     </a>
-    <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
+    <button className="navbar-toggler" style={{backgroundColor:"black"}} type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="offcanvas offcanvas-end" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
-      <div className="offcanvas-header">
+      <div className="offcanvas-header" style={{backgroundColor:"white"}}>
     
-        <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <button style={{backgroundColor:"white"}} type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div className="offcanvas-body" style={{backgroundColor:"white", color:"white"}}>
         <ul className="navbar-nav flex-grow-1 justify-content-between nav-links">

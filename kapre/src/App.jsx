@@ -5,7 +5,11 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import AutoPlay from "./Components/Autoplay";
 import { Navbar } from "./Components/Navbar";
-
+import { Cards } from "./Components/cards";
+import { Footer } from "./Components/Footer";
+//https://codepen.io/suez/pen/PwKZwO
+//https://codepen.io/nxworld/pen/ZYNOBZ
+//https://codepen.io/Jeremboo/pen/WwbjvL
 import './App.css';
 
 function App() {
@@ -43,7 +47,8 @@ function App() {
 </div>
 
 <AutoPlay />
-<p>This is page 3</p>
+<Cards />
+<Footer/>
     </>
   );
 }
