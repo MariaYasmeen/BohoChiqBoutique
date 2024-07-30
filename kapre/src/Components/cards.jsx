@@ -6,25 +6,20 @@ export const Cards = () => {
         <>
         <div className="mariabslider" style={{ marginTop:"50px"}} >
             <div className="d-md-flex flex-md-equal" >
-                    <div style={{ marginTop:"20px" , padding:"15px"}}
-                    >
-                         <Image
+                    <div style={{ marginTop:"20px" , padding:"7px"}}>
+         <Image
         imageSrc="/man.webp"
         heading="Amazing Place"
         buttonText="Learn More"
-      />
-                        
-                      </div>
-               <div style={{ marginTop:"20px" , padding:"15px"}}   > 
-                 <Image
-                    imageSrc="/daddy.webp"
-                    heading="Amazing Place"
+      /></div>
+             <div style={{ marginTop:"20px" , padding:"7px"}}   > 
+               <Image
+              imageSrc="/daddy.webp"
+                              heading="Amazing Place"
                     subheading="Discover the beauty"
                     buttonText="Learn More"
                   />
                </div>
-                     
-               
                </div>
                 </div>
                 <Image
@@ -34,9 +29,9 @@ export const Cards = () => {
         subheading="Discover the beauty"
         buttonText="Learn More"
       />
-                <div className="mariabslider" style={{ height:"50%"}} >
+                <div className="mariabslider"  >
                 <div className="d-md-flex flex-md-equal" >
-                        <div  style={{ marginTop:"20px" , padding:"15px"}}
+                        <div  style={{ marginTop:"20px" , padding:"7px"}}
                         > <Image
                         imageSrc="/mariab1.webp"
                         heading="Amazing Place"
@@ -44,7 +39,7 @@ export const Cards = () => {
                         buttonText="Learn More"
                       />
                    </div>
-                   <div  style={{ marginTop:"20px" , padding:"15px"}}
+                   <div  style={{ marginTop:"20px" , padding:"7px"}}
                         >  <Image
                         imageSrc="/mariab2.webp"
                         heading="Amazing Place"

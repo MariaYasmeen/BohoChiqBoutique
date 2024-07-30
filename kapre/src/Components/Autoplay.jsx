@@ -26,14 +26,14 @@ function AutoPlay() {
         heading="Amazing Place"
         buttonText="Learn More"
       />
-      <center><p>Mommy & Me</p></center>
+      <center><p>bridal</p></center>
         </div>
         <div>
         <HoverImg
         imageSrc="/slick2.png" 
         heading="Amazing Place"
         buttonText="Learn More"
-      /> <center><p>Mommy & Me</p></center></div>
+      /> <center><p>bridal</p></center></div>
         <div>
         <HoverImg
         imageSrc="/slick3.png" 
@@ -51,7 +51,7 @@ function AutoPlay() {
         imageSrc="/slick5.png" 
         heading="Amazing Place"
         buttonText="Learn More"
-      /><center><p>Mommy & Me</p></center> </div>
+      /><center><p>Men</p></center> </div>
         <div>
         <HoverImg
         imageSrc="/slick3.png" 

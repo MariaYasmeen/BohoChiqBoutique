@@ -53,7 +53,7 @@ export const Navbar = () =>{
 <div class="container" style={{color:"black",marginBottom:"8px"}}>
     <header class="d-flex justify-content-center " >
       <ul class="nav  ulcss nav-links"  >
-        <li class=" "><a href="#" class="nav-link">unstitched</a>
+        <li class=" "><a href="/product" class="nav-link">unstitched</a>
         <div className="mega-box " style={{left: "-210px"}} >
                 <div className="content" >
                   <div className="row" >
