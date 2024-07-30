@@ -1,56 +1,63 @@
 import React from "react";
 import Slider from "react-slick";
+import HoverImg from "../ImgSliders/HoverImg";
 
 function AutoPlay() {
   const settings = {
-    dots: true,
-    infinite: true,
-    slidesToShow: 6,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 3000,
-    autoplaySpeed: 3000,
-    cssEase: "linear"
-  };
+         dots: true,
+         autoplaySpeed: 2000,
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 2,
+      autoplay: true,
+      autoplaySpeed: 2000,
+  cssEase: 'linear'
+    };
+  
   return (
-    <div style={{marginTop:"23px"}}>
+    <div style={{marginTop:"23px", margin:"1rem", padding:"3px"}} className="hoverimgslider">
     
     <center><h3 >Featured Designs</h3></center>
     <div className="slider-container" >
-      <Slider {...settings}>
+      <Slider {...settings} >
         <div>
-        <img src="/lux.png" className="d-block w-100 img-fluid" alt="..." />
-         
-        <a className="nav-link" href="#"><h3>LUXURY FORMALS</h3></a>
+        <HoverImg
+        imageSrc="/slick1.png" 
+        heading="Amazing Place"
+        buttonText="Learn More"
+      />
+      <center><p>Mommy & Me</p></center>
         </div>
         <div>
-        <img src="/3.jpg" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>LUXURY PRET</h3></a>
-        </div>
+        <HoverImg
+        imageSrc="/slick2.png" 
+        heading="Amazing Place"
+        buttonText="Learn More"
+      /> <center><p>Mommy & Me</p></center></div>
         <div>
-        <img src="/kids.jpg" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>KIDS</h3></a>
-        </div>
+        <HoverImg
+        imageSrc="/slick3.png" 
+        heading="Amazing Place"
+        buttonText="Learn More"
+      /> <center><p>Mommy & Me</p></center></div>
         <div>
-        <img src="/dad.jpg" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>MENSWEAR</h3></a>
-        </div>
+        <HoverImg
+        imageSrc="/slick4.png" 
+        heading="Amazing Place"
+        buttonText="Learn More"
+      /><center><p>Mommy & Me</p></center> </div>
         <div>
-        <img src="/mom.png" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>MOMMY & ME</h3></a>
-        </div>
+        <HoverImg
+        imageSrc="/slick5.png" 
+        heading="Amazing Place"
+        buttonText="Learn More"
+      /><center><p>Mommy & Me</p></center> </div>
         <div>
-        <img src="/unstit.jpg" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>UNSTITCHED</h3></a>
-        </div>
-        <div>
-        <img src="/jew.png" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>JEWELRY</h3></a>
-        </div>
-        <div>
-        <img src="/perf.png" className="d-block w-100 img-fluid" alt="..." />
-        <a className="nav-link" href="#"><h3>PERFUMES</h3></a>
-        </div>
+        <HoverImg
+        imageSrc="/slick3.png" 
+        heading="Amazing Place"
+        buttonText="Learn More"
+      /><center><p>Mommy & Me</p></center> </div>
               </Slider>
     </div>
     </div>

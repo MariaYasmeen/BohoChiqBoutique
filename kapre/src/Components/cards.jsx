@@ -1,38 +1,56 @@
+import React from "react";
+import Image from "../ImgSliders/Image";
+
 export const Cards = () => {
     return (
         <>
-        <div className="mariabslider" style={{ height:"50%"}} >
+        <div className="mariabslider" style={{ marginTop:"50px"}} >
             <div className="d-md-flex flex-md-equal" >
-                    <div  style={{ margin:"5px",
-                            height: '100%',
-                        }}
-                    > <img src="/man.webp"></img>
-                    <center><p style={{ marginTop:"15px",}} className="lead">Menswear</p></center>
-               </div>
-               <div  style={{  margin:"5px",
-                            height: '100%', }}
-                    > <img src="/daddy.webp"></img>
-                   <center> <p  style={{ marginTop:"15px",}} className="lead">Dad & Me</p></center>
+                    <div style={{ marginTop:"20px" , padding:"15px"}}
+                    >
+                         <Image
+        imageSrc="/man.webp"
+        heading="Amazing Place"
+        buttonText="Learn More"
+      />
+                        
+                      </div>
+               <div style={{ marginTop:"20px" , padding:"15px"}}   > 
+                 <Image
+                    imageSrc="/daddy.webp"
+                    heading="Amazing Place"
+                    subheading="Discover the beauty"
+                    buttonText="Learn More"
+                  />
                </div>
                      
                
                </div>
                 </div>
-              
-                <img src="kidswear.webp"  style={{ padding:" 20px 35px 10px 35px" }} class="img-fluid" alt="..." />
-                <center> <p className="lead">Kids Wear</p></center>
+                <Image
+                style={{ padding:" 20px 35px 10px 35px" }} 
+        imageSrc="kidswear.webp"
+        heading="Amazing Place"
+        subheading="Discover the beauty"
+        buttonText="Learn More"
+      />
                 <div className="mariabslider" style={{ height:"50%"}} >
                 <div className="d-md-flex flex-md-equal" >
-                        <div  style={{ margin:"5px",
-                                height: '100%',
-                            }}
-                        > <img src="/mariab1.webp"></img>
-                        <center><p style={{ marginTop:"15px",}} className="lead">Unstitched</p></center>
+                        <div  style={{ marginTop:"20px" , padding:"15px"}}
+                        > <Image
+                        imageSrc="/mariab1.webp"
+                        heading="Amazing Place"
+                        subheading="Discover the beauty"
+                        buttonText="Learn More"
+                      />
                    </div>
-                   <div  style={{  margin:"5px",
-                                height: '100%', }}
-                        > <img src="/mariab2.webp"></img>
-                       <center> <p  style={{ marginTop:"15px",}} className="lead">Ready To Wear</p></center>
+                   <div  style={{ marginTop:"20px" , padding:"15px"}}
+                        >  <Image
+                        imageSrc="/mariab2.webp"
+                        heading="Amazing Place"
+                        subheading="Discover the beauty"
+                        buttonText="Learn More"
+                      />
                    </div>
                          
                    

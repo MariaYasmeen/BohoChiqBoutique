@@ -8,15 +8,12 @@ import { Navbar } from "./Components/Navbar";
 import { Cards } from "./Components/cards";
 import { Footer } from "./Components/Footer";
 //https://codepen.io/suez/pen/PwKZwO
-//https://codepen.io/nxworld/pen/ZYNOBZ
-//https://codepen.io/Jeremboo/pen/WwbjvL
+//https://codepen.io/ashthornton/pen/KRQbMO
 import './App.css';
 
 function App() {
   return (
     <>
-<Navbar />
-
 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
   <div className="carousel-inner">
     <div className="carousel-item active">
@@ -45,9 +42,8 @@ function App() {
     <span className="visually-hidden">Next</span>
   </button>
 </div>
-
-<AutoPlay />
 <Cards />
+<AutoPlay />
 <Footer/>
     </>
   );

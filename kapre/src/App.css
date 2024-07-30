@@ -1,5 +1,6 @@
 *{
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 .navbarbtns {
   color: white;
@@ -29,9 +30,9 @@ nav{
 nav .wrapper{
   color: black;
   position: relative;
-  max-width: 1300px;
+  width: 100%;
   padding: 0px 20px;
-  height: 40px;
+  height: 45px;
   line-height: 70px;
   margin: auto;
   display: flex;
@@ -55,19 +56,30 @@ nav .wrapper{
   border-bottom: 2px solid white;
   transition: all 0.3s ease;
 }
+.ulcss li a{
+  color: #000;
+  font-size: 14px;
+  border-radius: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid white;
+  transition: all 0.3s ease;
+}
 .nav-links li a:hover{
   border-bottom: 2px solid black;
   color: #000;
 }
-.nav-links{
-  display: none;
+.ulcss li a:hover{
+  border-bottom: 2px solid black;
+  color: #000;
 }
+
 .nav-links .drop-menu{
   position: absolute;
   background-color: white;
   width: 180px;
   line-height: 45px;
-  top: 85px;
+  top: 15px;
   color: black;
   opacity: 0;
   visibility: hidden;
@@ -77,8 +89,9 @@ nav .wrapper{
 .nav-links li:hover .mega-box{
   transition: all 0.3s ease;
   color: #000;
-  top: 45px;
+  top: 8rem;
   opacity: 1;
+  z-index: 999;
   visibility: visible;
 }
 .drop-menu li a{
@@ -95,13 +108,13 @@ nav .wrapper{
   width: 100%;
   padding: 0 300px;
   color: black;
-  top: 85px;
+  top: 9rem;
   opacity: 0;
   visibility: hidden;
 }
 .mega-box .content{
   background-color: white;
-  padding: 12px;
+  padding: 10px;
   display: flex;
   color: black;
   width: 100%;
@@ -144,37 +157,113 @@ nav .wrapper{
   top: 10px;
 }
 
-
-nav input{
-  display: none;
-}
-.slider-container {
-  width: 100%;
-  margin-bottom: 12px;
-}
-.slider-container img{
-  padding: 15px;
-}
-.slider-container div h3{
-  font-size: 13px;
-}
-.slider-container img{
-  border-radius: 50%;
+html {
+  box-sizing: border-box;
+  height: 100%;
 }
 
-.slick-slide h3 {
-  text-align: center;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
-.mariabslider{
+.container {
   display: flex;
   justify-content: center;
-  align-items: center;
+}
+
+.thumbnails {
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+  
+  li {
+    flex: auto; 
+  }
+
+  a {
+    display: block;
+  }
+  
+  img {
+    width: 30vmin;
+    height: 20vmin;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+
+.slides {
+  overflow: hidden;
+  width: 75vmin;
+  height: 100vmin;
+  
+  li {
+    width: 75vmin;
+    height: 100vmin;
+    position: absolute;
+    z-index: 1;
+  }
+  
+  img {
+    height: 100vmin;
+    object-fit: cover;
+    object-position: top;
+  }
+}
+/* Define keyframes for the animations */
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes hidden {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* Apply animation to the targeted slide */
+.slides li:target {
+  z-index: 3;
+  animation: slide 1s forwards; /* Use standard animation */
+}
+
+/* Apply animation to non-targeted slides */
+.slides li:not(:target) {
+  animation: hidden 1s forwards; /* Use standard animation */
 }
 
 
+@keyframes slide {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
 
-
+@keyframes hidden {
+  0% {
+    z-index: 2;
+  }
+  100% {
+    z-index: 2;
+  }
+}
 
 
 

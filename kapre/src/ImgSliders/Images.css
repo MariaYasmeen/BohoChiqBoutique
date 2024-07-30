@@ -1,0 +1,186 @@
+.slider-container {
+    width: auto;
+  }
+  .slider-container div img{
+    padding: 3px;
+    
+  }
+  .slider-container div h3{
+    font-size: 13px;
+  }
+  .slider-container img{
+    border-radius: 0%;
+  }
+  
+  .slick-slide h3 {
+    text-align: center;
+  }
+  
+  .mariabslider{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-hover-card {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .image-container {
+    position: relative;
+  }
+  
+  .card-image {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on image aspect ratio */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .image-hover-card:hover .card-image {
+    transform: scale(1.1); /* Zoom effect */
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Semi-transparent overlay */
+    transform: translateY(96%);
+    transition: transform 0.5s ease;
+  }  
+  
+  .image-hover-card:hover .overlay {
+    transform: translateY(0); /* Slide the text up */
+  }
+  .text {
+    color: white;
+    position: absolute;
+    bottom: 10%;
+    left: 59%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 20px;
+    transition: all 0.5s ease;
+  }
+  
+  h2 {
+    margin: 0;
+    font-size: 1.5em;
+  }
+  
+  p {
+    margin: 10px 0;
+  }
+  
+  .action-button {
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .action-button:hover {
+    border-radius: 0px;
+  }
+  
+/*---------------------------------------- Base styling for the hover card */
+/* Base styling for the hover card */
+.stylish-hover-card {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .stylish-hover-card:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Styling for the image */
+  .image-wrap {
+    position: relative;
+  }
+  
+.styled-image {
+    width: 100%;
+    height: auto; /* Allow height to adjust based on image aspect ratio */
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+  
+  .stylish-hover-card:hover  {
+    transform: scale(1.1); /* Slightly zoom the image */
+    filter: brightness(100%); /* Darken the image */
+  }
+  
+  .hover-overlay {
+    position: absolute;
+    top: 10;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  }
+  
+  .stylish-hover-card:hover .hover-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+
+  .overlay-heading {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    animation: fadeInUp 0.5s ease-out;
+  }
+  
+  .overlay-subheading {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    animation: fadeInUp 0.7s ease-out;
+  }
+  
+  .overlay-button {
+    padding: 6px 15px;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color:black;
+    border: none;
+     cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  /* Keyframes for animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+
+  
+  .hoverimgslider div{
+text-transform: uppercase;
+font-size: 14px;
+  }
