@@ -4,9 +4,10 @@ import "./Pages.css";
 export const Product = () => {
     return (
         <>
+        <Navbar/>
 <div className="productcss">
 <div className="con1">
-      <div className="container" >
+      <div className="imgcontainer" >
         
         <ul className="thumbnails">
           <li><a href="#slide1"><img src="/cour.webp" alt="Thumbnail 1" /></a></li>

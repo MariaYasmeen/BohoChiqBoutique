@@ -11,7 +11,7 @@ html {
   padding: 0;
 }
 
-.container {
+.imgcontainer {
   display: flex;
   width: 70%;
   margin-left: 10px !important;
@@ -36,7 +36,7 @@ html {
 
   a {
     display: block;
-    border: 1px solid black;
+    padding: 2px;
     height: 100%;
     width: 100%;
   }
@@ -46,6 +46,7 @@ html {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    border: 2px solid black;
     object-position: top;
   }
 }
@@ -68,7 +69,6 @@ html {
     height: 100vmin;
     object-fit: cover;
     object-position: top;
-    border: 1px solid black;
   }
 }
 

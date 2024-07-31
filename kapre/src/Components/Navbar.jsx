@@ -1,50 +1,42 @@
 export const Navbar = () =>{
     return (
         <>
-          <div className="navbar-container d-flex justify-content-center align-items-center" style={{ backgroundColor: "black" }}>
-      <div className="navbar-item mx-5">
+          <div className=" d-flex justify-content-center align-items-center" style={{ backgroundColor: "black" }}>
+      <div className=" mx-5">
         <a className="text-decoration-none" style={{ color: "white" }}>
           Free Shipping Over PKR 5000
         </a>
       </div>
-      <div className="navbar-item mx-5">
+      <div className=" mx-5">
         <a className="text-decoration-none" style={{ color: "white" }}>
          Contact Us: +9221111627422
         </a>
       </div>
     </div>
 
-  <div className="container-fluid">
+  <div className="">
   <div className="row align-items-center justify-content-between ">
     <div className="col text-center ">
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Search
-      </a>
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Search
-      </a>
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Search
-      </a>
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Search
+   
+      
+      <a href="#" className="text-decoration-none" ><img src="search.png" style={{ width: "15%",margin:"3px"  }}></img>
       </a>
     </div>
     <div className="col text-center">
-      <a href="#" className="text-decoration-none text-center" style={{ color: "black", fontSize: "45px" }}>
-        Fashionare
+      <a href="/" className="text-decoration-none text-center" style={{ color: "black", fontSize: "45px" }}>
+        M.YASMEEN
       </a>
     </div>
-    <div className="col text-center">
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Sign in
+    <div className="col text-center" >
+     <a href="#" className="text-decoration-none" ><img src="ship.png" style={{ width: "11%",margin:"3px"  }}></img>
+    </a>
+    <a href="#" className="text-decoration-none" ><img src="like.png" style={{ width: "8%",margin:"3px" }}></img>
+    </a>
+      <a href="#" className="text-decoration-none" ><img src="cart.png" style={{ width: "8%" ,margin:"3px" }}></img>
       </a>
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Search
+      <a href="#" className="text-decoration-none" ><img src="user.png" style={{ width: "8%",margin:"3px"  }}></img>
       </a>
-      <a href="#" className="text-decoration-none" style={{ color: "black" }}>
-        Search
-      </a>
+     
     </div>
   </div>
 </div>
@@ -98,7 +90,7 @@ export const Navbar = () =>{
         </li>
 
         
-        <li class="nav-item"><a href="#" class="nav-link">ready to wear</a>
+        <li class="nav-item"><a href="/signup" class="nav-link">ready to wear</a>
         <div className="mega-box"  >
                 <div className="content" >
                   <div className="row" style={{width:"20%"}}>
@@ -334,10 +326,9 @@ export const Navbar = () =>{
                  </ul>
                </div>
                   </div>
-                  </div>
+                  </div>    
          </li>
-          <li class="nav-item"><a href="#" class="nav-link">perfumes</a
-          ></li>
+          
         <li class="nav-item"><a href="#" class="nav-link">sale</a>
         </li>
       </ul>
