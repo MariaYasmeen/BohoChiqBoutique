@@ -115,7 +115,7 @@ export const Navbar = () =>{
                   </div>
                   </div>
                   </div></li>
-        <li class="nav-item"><a href="#" class="nav-link">kids</a>
+        <li class="nav-item"><a href="/kids" class="nav-link">kids</a>
         <div className="mega-box" >
                 <div className="content" >
                   <div className="row" >

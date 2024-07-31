@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { KidsPage } from './Pages/KidsPg';
 import SignUp from './Register/SignUp';
 //https://codepen.io/suez/pen/PwKZwO
 //https://codepen.io/ashthornton/pen/KRQbMO
@@ -22,6 +23,7 @@ function App() {
           <Route path="/" element={<Home/>} />
           <Route path="/product" element={<Product />} />
           <Route path="/signup" element={<SignUp />} />
+          <Route path="/kids" element={<KidsPage />} />
         </Routes>
       </BrowserRouter>      
     </React.StrictMode>
