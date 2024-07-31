@@ -1,6 +1,6 @@
 import React from "react";
+import {Navbar} from "../Components/Navbar";
 import "./Pages.css";
-
 export const Product = () => {
     return (
         <>
@@ -22,7 +22,24 @@ export const Product = () => {
 
       </div>
     </div>
-<div className="cont2" style={{width:"50%"}}> This is container 1</div>
+<div className="cont2" >
+<h3>JSD-026-Gold</h3>
+<p>JS-026-GOLD | IN STOCK</p>
+
+<h7>SAVE 20%</h7>
+<h5>PKR 7,390 | pkr 5, 912</h5>
+<p>GST Inclusive</p>
+<div className="cont2btns" >
+<button style={{backgroundColor:"black", color:"white"}}>ADD TO CART</button>
+<button>Add to  Wishlist</button>
+</div>
+<p>Disclaimer: Product color may vary slightly due to photographic lighting or your device settings.</p>
+ <h4>Description</h4>
+ <p>Witness the allure of sophisticated embellishments that enhance the designs from our signature jewelry creations handcrafted on 925 sterling silver with a gleaming 24K gold plated finish. Blending functionality with feminine grace, our M insignia encrusted with white zircons features a hanging round cultured.
+White Zircons 24K Gold plated Round cultured Pearls in hanging Metal: Sterling Silver (925) Made in Pakistan <br/>
+Disclaimer: Most of the pieces are individually Handcrafted with natural embellishments like semi-precious Stones. The natural material contains irregularities and therefore slight variations in color, shape, and size in the same article may occur and will not be considered damaged or defected.</p>
+ 
+ </div>
  
 </div>
         </>

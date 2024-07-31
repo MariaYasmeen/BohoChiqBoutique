@@ -15,24 +15,23 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
-    padding: 20px;
   }
   
   /* Slider styling */
   .slides {
     position: relative;
     overflow: hidden;
-    padding: 20px;
-    width: 60vmin; /* Original width */
-    height: 80vmin; /* Original height */
+    padding: 15px;
+    width: 55vmin; /* Original width */
+    height: 79vmin; /* Original height */
   }
   
   .slides li {
     position: absolute;
-    width: 46vmin; /* Original width */
+    width: 49vmin; /* Original width */
     height: 73vmin; /* Original height */
     z-index: 1;
+    list-style: none; 
   }
   
   .slides img {
@@ -40,15 +39,10 @@ html {
     height: 100%;
     object-fit: cover;
     object-position: top;
+    list-style: none; 
   }
   
-  /* Thumbnails styling */
-  .thumbnails {
-    display: flex;
-    flex-direction: column;
-    line-height: 0;
-  }
-  
+
   .thumbnails li {
     list-style: none; 
     width: 26vmin; /* Original width */
@@ -65,6 +59,7 @@ html {
     object-fit: cover;
     object-position: top;
     transition: opacity 0.1s ease;
+    border: 1px solid black;
   }
   
   .thumbnails img:hover {
@@ -73,38 +68,45 @@ html {
   
   /* Responsive adjustments */
   @media (max-width: 687px) {
-    .slides {
-      width: 100%; /* Adjust width for smaller screens */
-      height: 60vh; /* Adjust height for smaller screens */
-    }
+  
   
     .slides li {
       width: 100%; /* Adjust width for smaller screens */
-      height: 60vh; /* Adjust height for smaller screens */
+      height: 70vh; /* Adjust height for smaller screens */
     }
   
     .thumbnails {
-      flex-direction: row; /* Change direction for smaller screens */
-      flex-wrap: wrap; /* Allow wrapping of thumbnails */
-      justify-content: center; /* Center thumbnails */
-      margin-top: 10px;
+       /* Center thumbnails */
+      margin-top: 0px;
     }
+    .productcss {
+      display: flex;
+      flex-direction: column;
+  }
   
-    .thumbnails li {
-      margin: 5px; /* Space between thumbnails */
-    }
   
     .thumbnails img {
-      width: 80px; /* Adjust size for smaller screens */
-      height: auto; /* Maintain aspect ratio */
+      width: 90px;
     }
   }
   
 
 .productcss{
     display: flex;
+    margin-top: 3rem;
 }
 .productcss div{
     display: flex;
     flex-direction: row;
+}
+.cont2{
+  font-size: 15px;
+  padding-right: 20px;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column !important;
+}
+.cont2btns button{
+padding: 7px 40px;
+margin: 2px;
 }
