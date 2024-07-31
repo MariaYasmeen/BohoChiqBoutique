@@ -1,34 +1,29 @@
+import React from "react";
+import "./Pages.css";
+
 export const Product = () => {
-
-
     return (
         <>
-        <div class="container">
-  <ul class="slides">
-    <li id="slide1"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw1.jpg" alt="" /></li>
-    <li id="slide2"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw2.jpg" alt="" /></li>
-    <li id="slide3"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw3.jpg" alt="" /></li>
-    <li id="slide4"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw4.jpg" alt="" /></li>
-    <li id="slide5"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw5.jpg" alt="" /></li>
-  </ul>
+<div className="productcss">
+<div className="con1">
+      <div className="container" >
+        
+        <ul className="thumbnails">
+          <li><a href="#slide1"><img src="/cour.webp" alt="Thumbnail 1" /></a></li>
+          <li><a href="#slide2"><img  src="cour1.webp" alt="Thumbnail 2" /></a></li>
+          <li><a href="#slide3"><img  src="cour2.webp" alt="Thumbnail 3" /></a></li>
+        </ul>
 
-  <ul class="thumbnails">
-    <li>
-      <a href="#slide1"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw1.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide2"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw2.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide3"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw3.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide4"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw4.jpg" /></a>
-    </li>
-    <li>
-      <a href="#slide5"><img src="https://cdn.rawgit.com/huijing/filerepo/gh-pages/lw5.jpg" /></a>
-    </li>
-  </ul>
+        <ul className="slides" >
+          <li id="slide1" ><img  src="/cour.webp" alt="Slide 1" /></li>
+          <li id="slide2"><img  src="cour1.webp" alt="Slide 2" /></li>
+          <li id="slide3"><img  src="cour2.webp" alt="Slide 3" /></li>
+        </ul>
+
+      </div>
+    </div>
+<div className="cont2" style={{width:"50%"}}> This is container 1</div>
+ 
 </div>
         </>
     )
