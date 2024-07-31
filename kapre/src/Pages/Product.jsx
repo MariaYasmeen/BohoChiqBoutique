@@ -4,7 +4,6 @@ import "./Pages.css";
 export const Product = () => {
     return (
         <>
-        <Navbar/>
 <div className="productcss">
 <div className="con1">
       <div className="container" >
