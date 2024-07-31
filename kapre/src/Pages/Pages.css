@@ -53,6 +53,7 @@ html {
 .slides {
   overflow: hidden;
   width: 75vmin;
+  padding: 0px !important;
   height: 100vmin;
   list-style: none;
   
@@ -113,6 +114,7 @@ html {
   flex-direction: column !important;
 }
 .cont2btns button{
-padding: 7px 40px;
+padding: 7px 55px;
 margin: 2px;
+font-size: 16px;
 }
