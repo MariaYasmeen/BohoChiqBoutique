@@ -21,21 +21,21 @@ html {
   .slides {
     position: relative;
     overflow: hidden;
-    padding: 15px;
-    width: 55vmin; /* Original width */
+    padding: 13px;
+    width: 65vmin; /* Original width */
     height: 79vmin; /* Original height */
   }
   
   .slides li {
     position: absolute;
-    width: 49vmin; /* Original width */
+    width: 52vmin; /* Original width */
     height: 73vmin; /* Original height */
     z-index: 1;
     list-style: none; 
   }
   
   .slides img {
-    width: 100%;
+    width:110%;
     height: 100%;
     object-fit: cover;
     object-position: top;
@@ -45,8 +45,8 @@ html {
 
   .thumbnails li {
     list-style: none; 
-    width: 26vmin; /* Original width */
-    height: 25vmin;
+    width: 15vmin; /* Original width */
+    height: auto;
   }
   
   .thumbnails a {
@@ -54,8 +54,8 @@ html {
   }
   
   .thumbnails img {
-    width: 32vmin; /* Original size */
-    height: 24vmin; /* Original size */
+    width: 110px; /* Original size */
+    height: auto;
     object-fit: cover;
     object-position: top;
     transition: opacity 0.1s ease;
@@ -72,7 +72,7 @@ html {
   
     .slides li {
       width: 100%; /* Adjust width for smaller screens */
-      height: 70vh; /* Adjust height for smaller screens */
+      height: auto;
     }
   
     .thumbnails {
@@ -89,8 +89,7 @@ html {
       width: 90px;
     }
   }
-  
-
+ 
 .productcss{
     display: flex;
     margin-top: 3rem;
