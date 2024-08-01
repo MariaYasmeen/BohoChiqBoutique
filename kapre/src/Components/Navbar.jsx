@@ -1,4 +1,8 @@
 export const Navbar = () =>{
+
+const user = JSON.parse(localStorage.getItem("user"));
+console.log(user);
+
     return (
         <>
           <div className=" d-flex justify-content-center align-items-center" style={{ backgroundColor: "black" }}>
@@ -32,9 +36,22 @@ export const Navbar = () =>{
     </a>
     <a href="#" className="text-decoration-none" ><img src="like.png" style={{ width: "8%",margin:"3px" }}></img>
     </a>
-      <a href="#" className="text-decoration-none" ><img src="cart.png" style={{ width: "8%" ,margin:"3px" }}></img>
-      </a>
-      <a href="#" className="text-decoration-none" ><img src="user.png" style={{ width: "8%",margin:"3px"  }}></img>
+   
+
+{user?.user?.email !== "mariyayasmeen000@gmail.com" ? (
+  <a href="/cart" className="text-decoration-none">
+    <img
+  src="cart.png"
+  alt="Cart"
+  style={{ width: "8%", margin: "3px" }}
+/>Cart
+  </a>
+) : (
+  ""
+)}
+
+      
+     <a href="/account" className="text-decoration-none" ><img src="user.png" style={{ width: "8%",margin:"3px"  }}></img>
       </a>
      
     </div>
@@ -329,8 +346,21 @@ export const Navbar = () =>{
                   </div>    
          </li>
           
-        <li class="nav-item"><a href="#" class="nav-link">sale</a>
-        </li>
+        <li class="nav-item"><a href="#" class="nav-link">sale</a></li>
+        {user?.user?.email === "mariyayasmeen000@gmail.com" && (
+        <>
+          <li className="nav-item">
+            <a href="/admindashboard" className="nav-link">Dashboard</a>
+          </li>
+          <li className="nav-item">
+            <a href="/addproduct" className="nav-link">Add</a>
+          </li>
+          <li className="nav-item">
+            <a href="/editproduct" className="nav-link">Edit</a>
+          </li>
+        </>
+        )}
+       
       </ul>
     </header>
   </div>

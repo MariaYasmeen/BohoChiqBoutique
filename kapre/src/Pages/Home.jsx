@@ -4,7 +4,7 @@ import { Navbar } from "../Components/Navbar";
 import { Cards } from "../Components/cards";
 import { Footer } from "../Components/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { addToCart, delFromCart } from "../Redux/CartSlice";
+import { delFromCart, addToCart } from "../Redux/CartSlice";
 
 export const Home = () =>{
 const dispatch = useDispatch();
@@ -16,11 +16,9 @@ const cartItem = useSelector((state)=> state.cart)
   const delCart = () =>{
     dispatch(delFromCart("Pilot uniform"));
   }
-  console.log(cartItem);
+  console.log(cartItem)
     return (
         <>
-        <button onClick={(() =>{addCart()})}>Add</button>
-        <button onClick={(() =>{delCart()})}>Delete</button>
         <Navbar />
 
 <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
