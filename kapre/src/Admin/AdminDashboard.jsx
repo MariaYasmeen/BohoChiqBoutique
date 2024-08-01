@@ -7,7 +7,6 @@ function AdminDashboard() {
     const context = useContext(DBContext)
   
     const  {product, delProduct, handledit} = context;
-    console.log(product)
     const add= () => {
         window.location.href = "/addproduct"
     }

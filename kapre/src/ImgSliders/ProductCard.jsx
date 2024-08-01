@@ -18,7 +18,7 @@ const ProductCard = ({ image1, image2, title, code, price }) => {
         <h2>{title}</h2>
         <p>{code}</p>
         <div className="product-info">
-          <p>SIZE: S M L</p>
+          <p>In Stock</p>
           <p className="price">PKR {price}</p>
         </div>
       </div>
