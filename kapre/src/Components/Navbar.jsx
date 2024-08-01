@@ -44,7 +44,7 @@ console.log(user);
   src="cart.png"
   alt="Cart"
   style={{ width: "8%", margin: "3px" }}
-/>Cart
+/>
   </a>
 ) : (
   ""

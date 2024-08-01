@@ -1,19 +1,17 @@
 import React, { useEffect, useState } from "react";
 import DBContext from "./DBContext";
-import { addDoc, Timestamp, collection, onSnapshot, orderBy, query } from "firebase/firestore";
+import { doc, addDoc, setDoc, deleteDoc, Timestamp, collection, onSnapshot, orderBy, query } from "firebase/firestore";
 import { fireDB } from "../Firebase/FirebaseConfig";
 
 function DBState(props) {
   const [Loading, setLoading] = useState(false);
-
-  // Initialize state for product attributes
   const [products, setProducts] = useState({
     title: null,
     price: null,
     imageURL: null,
     category: null,
     desc: null,
-    time: Timestamp.now(), // Default timestamp
+    time: Timestamp.now(),
     date: new Date().toLocaleString("en-US", {
       month: "short",
       day: "2-digit",
@@ -21,36 +19,37 @@ function DBState(props) {
     }),
   });
 
+  const [product, setProduct] = useState([]);
+  
   const addprod = async () => {
-    setLoading(true); // Set loading to true at the beginning
+    setLoading(true);
     try {
-      const productRef = collection(fireDB, "products"); // Get a reference to the products collection
-      await addDoc(productRef, products); // Add the product to Firestore
+      const productRef = collection(fireDB, "products");
+      await addDoc(productRef, products);
       console.log("Product added to DB");
-      window.location.href= "/admindashboard"
-      getProdData(); // Refresh product data
+      window.location.href = "/admindashboard";
+      getProdData();
     } catch (error) {
-      console.log(error); // Log errors if any
+      console.log(error);
     } finally {
-      setLoading(false); // Set loading to false after operation
+      setLoading(false);
     }
   };
 
-  const [product, setProduct] = useState([]);
   const getProdData = () => {
     setLoading(true);
     try {
-      const q = query(collection(fireDB, "products"), orderBy("time")); // Query products ordered by time
-      const unsubscribe = onSnapshot(q, (querySnapshot) => { // Setup Firestore snapshot listener
+      const q = query(collection(fireDB, "products"), orderBy("time"));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
         let productArr = [];
         querySnapshot.forEach((doc) => {
           productArr.push({ ...doc.data(), id: doc.id });
         });
-        setProduct(productArr); // Update product state
+        setProduct(productArr);
         setLoading(false);
       });
 
-      return unsubscribe; // Return the unsubscribe function properly
+      return unsubscribe;
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -58,14 +57,49 @@ function DBState(props) {
   };
 
   useEffect(() => {
-    const unsubscribe = getProdData(); // Get the unsubscribe function
+    const unsubscribe = getProdData();
     return () => {
-      unsubscribe && unsubscribe(); // Unsubscribe when the component unmounts
+      unsubscribe && unsubscribe();
     };
   }, []);
 
+  const handledit = (item) => {
+    setProducts(item);
+  };
+
+  const updateProd = async () => {
+    setLoading(true);
+    try {
+      if (products.id) {
+        await setDoc(doc(fireDB, "products", products.id), products);
+        console.log("Product updated successfully");
+        getProdData();
+        window.location.href = "/admindashboard";
+      } else {
+        console.log("Product ID is undefined");
+      }
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const delProduct = async (item) => {
+    setLoading(true);
+    try {
+      await deleteDoc(doc(fireDB, "products", item.id));
+      console.log("Product deleted successfully");
+      getProdData();
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
+    }
+  };
+
   return (
-    <DBContext.Provider value={{ Loading, setLoading, products, setProducts, addprod, product }}>
+    <DBContext.Provider value={{ Loading, setLoading, products, setProducts, addprod, product, delProduct, updateProd,handledit }}>
       {props.children}
     </DBContext.Provider>
   );
