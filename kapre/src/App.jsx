@@ -5,7 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { KidsPage } from './Pages/KidsPg';
+import { Menswear } from './Pages/Menswear';
 import SignUp from './Register/SignUp';
 //https://codepen.io/suez/pen/PwKZwO
 //https://codepen.io/ashthornton/pen/KRQbMO
@@ -14,11 +14,11 @@ import { Product } from "./Pages/Product";
 import AddProd from './Admin/AddProd';
 import EditProd from './Admin/EditProd';
 import DBState from './Context/DBState';
+import { Cart } from './Pages/Cart';
 import AdminDashboard from './Admin/AdminDashboard';
 import Account from "./Register/Account";
 import './App.css';
 import SignIn from './Register/SignIn';
-import { Cart } from './Pages/Cart';
 
 
 function App() {
@@ -53,7 +53,7 @@ function App() {
             <EditProd />
             </AdminRoute>
             } />
-          <Route path="/kids" element={<KidsPage />} />
+          <Route path="/menswear" element={<Menswear />} />
         </Routes>
       </BrowserRouter>      
     </React.StrictMode>

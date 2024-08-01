@@ -34,7 +34,7 @@ console.log(user);
     <div className="col text-center" >
      <a href="#" className="text-decoration-none" ><img src="ship.png" style={{ width: "11%",margin:"3px"  }}></img>
     </a>
-    <a href="#" className="text-decoration-none" ><img src="like.png" style={{ width: "8%",margin:"3px" }}></img>
+    <a href="/cart" className="text-decoration-none" ><img src="like.png" style={{ width: "8%",margin:"3px" }}></img>
     </a>
    
 
@@ -132,7 +132,7 @@ console.log(user);
                   </div>
                   </div>
                   </div></li>
-        <li class="nav-item"><a href="/kids" class="nav-link">kids</a>
+        <li class="nav-item"><a href="" class="nav-link">kids</a>
         <div className="mega-box" >
                 <div className="content" >
                   <div className="row" >
@@ -191,7 +191,7 @@ console.log(user);
                 </div>
               </div>
         </li>
-        <li class="nav-item"><a href="#" class="nav-link">menswear</a>
+        <li class="nav-item"><a href="/menswear" class="nav-link">menswear</a>
         <div className="mega-box" >
                 <div className="content" >
                   <div className="row"   style={{width:"30%"}}>
@@ -351,12 +351,6 @@ console.log(user);
         <>
           <li className="nav-item">
             <a href="/admindashboard" className="nav-link">Dashboard</a>
-          </li>
-          <li className="nav-item">
-            <a href="/addproduct" className="nav-link">Add</a>
-          </li>
-          <li className="nav-item">
-            <a href="/editproduct" className="nav-link">Edit</a>
           </li>
         </>
         )}
