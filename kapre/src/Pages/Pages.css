@@ -13,89 +13,76 @@ html {
 
 .imgcontainer {
   display: flex;
-  width: 70%;
-  margin-left: 10px !important;
-  margin-right: 50px !important;
   justify-content: center;
-}
-.cont1{
-
 }
 
 .thumbnails {
+  padding-left: 30px;
+  margin: 0px;
+  height: 58px;
   display: flex;
   flex-direction: column;
   line-height: 0;
-  width: 50%;
-  height: 30%;
   list-style: none;
   
   li {
     flex: auto; 
+    list-style: none;
   }
 
   a {
     display: block;
-    padding: 2px;
-    height: 100%;
-    width: 100%;
   }
   
   img {
-    list-style: none;
+    width: 15vmin;
     height: 100%;
-    width: 100%;
+    margin: 2px;
     object-fit: cover;
-    border: 2px solid black;
     object-position: top;
+    list-style: none;
+    border: 3px solid black;
   }
 }
 
 .slides {
-  overflow: hidden;
-  width: 75vmin;
   padding: 0px !important;
+  overflow: hidden;
+  width: 79vmin;
   height: 100vmin;
-  list-style: none;
   
   li {
     width: 75vmin;
     height: 100vmin;
     position: absolute;
     z-index: 1;
+    list-style: none;
   }
   
   img {
+    width: 100%;
     height: 100vmin;
     object-fit: cover;
     object-position: top;
   }
 }
 
-.slides li:target {
-  z-index: 3;
-  -webkit-animation: slide 1s 1;
-}
-
-.slides li:not(:target) {
-  -webkit-animation: hidden 1s 1;
-}
 
 @keyframes slide {
   0% {
-    transform: translateY(-100%);
+    transform: translateX(-90%);
   }
   100% {
-    transform: translateY(0%);
+    transform: translateX(0%);
   }
 }
 
 @keyframes hidden {
   0% {
-    z-index: 2;
+    z-index:1;
   }
   100% {
-    z-index: 2;
+    z-index: 1;
   }
 }
 .productcss{
@@ -109,7 +96,6 @@ html {
 .cont2{
   font-size: 15px;
   padding-right: 20px;
-  padding-left: 20px;
   display: flex;
   flex-direction: column !important;
 }

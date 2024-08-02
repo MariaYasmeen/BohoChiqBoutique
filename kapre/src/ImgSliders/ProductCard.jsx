@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './Images.css';
 
-const ProductCard = ({ image1, image2, title, code, price }) => {
+const ProductCard = ({ id, image1, image2, title, code, price }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  const handleQuickView = () => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <div 
@@ -12,7 +18,7 @@ const ProductCard = ({ image1, image2, title, code, price }) => {
     >
       <div className="product-image">
         <img src={isHovered ? image2 : image1} alt="Product" />
-        {isHovered && <button className="buy-button">QUICK VIEW</button>}
+        {isHovered && <button className="buy-button" onClick={handleQuickView}>QUICK VIEW</button>}
       </div>
       <div className="product-details">
         <h2>{title}</h2>

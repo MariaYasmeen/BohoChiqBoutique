@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import ProductCard from "../ImgSliders/ProductCard";
-import { Navbar } from "../Components/Navbar";
-import { Footer } from "../Components/Footer";
-import "./Pages.css";
-import DBContext from "../Context/DBContext";
+import React, { useContext } from 'react';
+import ProductCard from '../ImgSliders/ProductCard';
+import { Navbar } from '../Components/Navbar';
+import { Footer } from '../Components/Footer';
+import './Pages.css';
+import DBContext from '../Context/DBContext';
 
 export const Menswear = () => {
   const context = useContext(DBContext);
@@ -14,20 +14,21 @@ export const Menswear = () => {
       <Navbar />
       <div className="product-grid">
         {product.map((item, index) => {
-          const { title, price, desc, imageURL } = item;
+          const { id, title, price, desc, imageURL } = item;
           return (
             <ProductCard
               key={index}
+              id={id}
               image1={imageURL}
               image2={imageURL}
               title={title}
-             // code={desc}
+              code={desc}
               price={price}
             />
           );
         })}
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
