@@ -210,8 +210,55 @@ nav .wrapper{
 }
 
 
+.centerectextimg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 90px;
+  padding-right: 90px;
+  background-color: #eeeeee;
+  color: #250902;
+}
 
+.textcenter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+padding: 30px;
+}
 
+.centerectextimg h2{
+  font-size: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.centerectextimg p{
+ font-size: 16px;
+ letter-spacing: 1px;
+font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -16px;
+  right: -10px;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+}
 
 
 

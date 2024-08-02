@@ -47,7 +47,7 @@ function App() {
             </AdminRoute>
           } />
           <Route path="/menswear" element={<Menswear />} />
-          <Route path="/product/:id" element={<Product />} />
+          <Route path="/product/:title" element={<Product />} />
         </Routes>
       </BrowserRouter>
     </DBState>

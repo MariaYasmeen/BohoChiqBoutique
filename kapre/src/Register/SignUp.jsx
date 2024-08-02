@@ -6,7 +6,7 @@ import { auth, fireDB } from '../Firebase/FirebaseConfig';  // Ensure correct im
 import { Loader } from '../Components/Loader';
 import { addDoc, collection } from 'firebase/firestore';
 import "./Register.css";
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [name, setName] = useState("");
@@ -101,7 +101,7 @@ const SignUp = () => {
           <button className="btn btn-primary w-100 py-2" type="submit" disabled={Loading}>
             {Loading ? "Signing up..." : "Sign up"}
           </button>
-          <h6 style={{marginTop:"20px"}}>Alreay have an account?<a href='/signin'>SignIn</a> </h6>
+          <h6 style={{marginTop:"20px"}}>Alreay have an account?<Link to='/signin'>SignIn</Link> </h6>
 
           <p className="mt-5 mb-3 text-body-secondary">© 2024 Developed by Maria Yasmeen</p>
         </form>

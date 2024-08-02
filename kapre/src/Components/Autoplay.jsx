@@ -40,6 +40,7 @@ function AutoPlay() {
         heading="Amazing Place"
         buttonText="Learn More"
       /> <center><p>Mommy & Me</p></center></div>
+      
         <div>
         <HoverImg
         imageSrc="/slick4.png" 

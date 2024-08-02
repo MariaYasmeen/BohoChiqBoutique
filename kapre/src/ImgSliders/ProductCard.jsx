@@ -1,13 +1,28 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux'; // Import useDispatch
+import { Link, useNavigate } from 'react-router-dom';
+import { addToWishlist } from '../Redux/CartSlice'; // Ensure this import is correct
 import './Images.css';
 
 const ProductCard = ({ id, image1, image2, title, code, price }) => {
+  // Example of creating a slug from a title
+  const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch(); // Initialize dispatch
 
   const handleQuickView = () => {
-    navigate(`/product/${id}`);
+    navigate(`/product/${slug}`);
+  };
+
+  // Create the product object to add to the wishlist
+  const product = { id, image1, image2, title, code, price };
+
+  // Add to wishlist function
+  const addtowishlist = () => {
+    dispatch(addToWishlist(product)); // Use dispatch to add to wishlist
+    console.log("Product added to the wishlist");
   };
 
   return (
@@ -17,8 +32,18 @@ const ProductCard = ({ id, image1, image2, title, code, price }) => {
       onMouseLeave={() => setIsHovered(false)}
     >
       <div className="product-image">
-        <img src={isHovered ? image2 : image1} alt="Product" />
-        {isHovered && <button className="buy-button" onClick={handleQuickView}>QUICK VIEW</button>}
+        <Link to={`/product/${slug}`}>
+          <img src={isHovered ? image2 : image1} alt={title} />
+          {isHovered && <button className="buy-button" onClick={handleQuickView}>QUICK VIEW</button>}
+        </Link>
+
+        {/* Icon on the top right corner */}
+        <button className="wishlist-button" onClick={addtowishlist}>
+          <i className="fa-regular fa-heart icon-top-right"></i>
+        </button>
+        
+        {/* Badge on the top left corner */}
+        <span className="badge-top-left">NEW</span>
       </div>
       <div className="product-details">
         <h2>{title}</h2>

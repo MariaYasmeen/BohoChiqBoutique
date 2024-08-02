@@ -56,7 +56,7 @@
   }  
   
   .image-hover-card:hover .overlay {
-    transform: translateY(0); /* Slide the text up */
+    transform: translateX(0); /* Slide the text up */
   }
   .text {
     color: white;
@@ -170,7 +170,7 @@
   @keyframes fadeInUp {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(-100px);
     }
     to {
       opacity: 1;

@@ -1,5 +1,4 @@
 import React from "react";
-import AutoPlay from "../Components/Autoplay";
 import { Navbar } from "../Components/Navbar";
 import { Cards } from "../Components/cards";
 import { Footer } from "../Components/Footer";
@@ -50,7 +49,6 @@ const cartItem = useSelector((state)=> state.cart)
   </button>
 </div>
 <Cards />
-<AutoPlay />
 <Footer/>
         </>
     )

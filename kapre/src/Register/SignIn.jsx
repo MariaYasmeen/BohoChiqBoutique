@@ -4,7 +4,7 @@ import DBContext from '../Context/DBContext';
 import { auth } from '../Firebase/FirebaseConfig';  // Removed fireDB as it's not used
 import { Loader } from '../Components/Loader';
 import { signInWithEmailAndPassword } from 'firebase/auth';  // Correct import
-import { useNavigate } from 'react-router-dom';
+import { Link,  useNavigate } from 'react-router-dom';
 import "./Register.css";
 
 function SignIn() {
@@ -78,7 +78,7 @@ function SignIn() {
           <button className="btn btn-primary w-100 py-2" type="submit" disabled={Loading}>
             {Loading ? "Signing In..." : "Sign In"}
           </button>
-          <h6 style={{marginTop:"20px"}}>Create a new account<a href='/signup'>SignUp</a> </h6>
+          <h6 style={{marginTop:"20px"}}>Create a new account<Link to='/signup'>SignUp</Link> </h6>
 
           <p className="mt-5 mb-3 text-body-secondary">© 2024 Developed by Maria Yasmeen</p>
         </form>
