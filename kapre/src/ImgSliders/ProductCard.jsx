@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux'; // Import useDispatch
 import { Link, useNavigate } from 'react-router-dom';
-import { addToWishlist } from '../Redux/CartSlice'; // Ensure this import is correct
+import { addToWishlist } from '../Redux/WishlistSlice';
 import './Images.css';
 
 const ProductCard = ({ id, image1, image2, title, code, price }) => {
@@ -12,6 +12,20 @@ const ProductCard = ({ id, image1, image2, title, code, price }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch(); // Initialize dispatch
 
+  // Manage wishlist state
+  const [isInWishlist, setIsInWishlist] = useState(() => {
+    // Retrieve initial wishlist state from local storage
+    const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || {};
+    return storedWishlist[id] || false;
+  });
+
+  // Update local storage whenever the wishlist state changes
+  useEffect(() => {
+    const storedWishlist = JSON.parse(localStorage.getItem('wishlist')) || {};
+    storedWishlist[id] = isInWishlist;
+    localStorage.setItem('wishlist', JSON.stringify(storedWishlist));
+  }, [id, isInWishlist]);
+
   const handleQuickView = () => {
     navigate(`/product/${slug}`);
   };
@@ -20,9 +34,10 @@ const ProductCard = ({ id, image1, image2, title, code, price }) => {
   const product = { id, image1, image2, title, code, price };
 
   // Add to wishlist function
-  const addtowishlist = () => {
+  const toggleWishlist = () => {
+    setIsInWishlist((prev) => !prev); // Toggle wishlist state
     dispatch(addToWishlist(product)); // Use dispatch to add to wishlist
-    console.log("Product added to the wishlist");
+    console.log('Product added to the wishlist');
   };
 
   return (
@@ -38,8 +53,8 @@ const ProductCard = ({ id, image1, image2, title, code, price }) => {
         </Link>
 
         {/* Icon on the top right corner */}
-        <button className="wishlist-button" onClick={addtowishlist}>
-          <i className="fa-regular fa-heart icon-top-right"></i>
+        <button className="wishlist-button" onClick={toggleWishlist}>
+          <i className={`fa-heart icon-top-right ${isInWishlist ? 'fa-solid' : 'fa-regular'}`} ></i>
         </button>
         
         {/* Badge on the top left corner */}

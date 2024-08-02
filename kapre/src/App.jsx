@@ -8,6 +8,7 @@ import { Menswear } from './Pages/Menswear';
 import SignUp from './Register/SignUp';
 import { Home } from "./Pages/Home";
 import { Product } from "./Pages/Product";
+import { Wishlist } from './Pages/WishList';
 import AddProd from './Admin/AddProd';
 import EditProd from './Admin/EditProd';
 import DBState from './Context/DBState';
@@ -23,6 +24,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/wishlist" element={<Wishlist />} />
           <Route path="/account/*" element={<Account />} />
           <Route path="/cart" element={
             <UserRoute>

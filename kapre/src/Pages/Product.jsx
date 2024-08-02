@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import DBContext from '../Context/DBContext';
 import { addToCart } from '../Redux/CartSlice';
+import { addToWishlist } from '../Redux/WishlistSlice';
 import { Navbar } from "../Components/Navbar";
 import "./Pages.css";
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,6 +14,13 @@ export const Product = () => {
 
   const dispatch = useDispatch();
   const cartItems = useSelector((state) => state.cart);
+
+  const wishlistItems = (product) => {
+    dispatch(addToWishlist(product));
+    console.log(wishlistItems);
+    console.log("Product added to the wishlistItems");
+  };
+
 
   const addCart = (product) => {
     dispatch(addToCart(product));
@@ -63,7 +71,7 @@ export const Product = () => {
           <p>GST Inclusive</p>
           <div className="cont2btns">
             <button style={{ backgroundColor: "black", color: "white" }} onClick={() => addCart(item)}>ADD TO CART</button>
-            <button>Add to Wishlist</button>
+            <button onClick={() => wishlistItems(item)}>Add to Wishlist</button>
           </div>
           <p>Disclaimer: Product color may vary slightly due to photographic lighting or your device settings.</p>
           <h4>Description</h4>

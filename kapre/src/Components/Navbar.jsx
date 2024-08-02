@@ -8,6 +8,7 @@ const user = JSON.parse(localStorage.getItem("user"));
 console.log(user);
 
 const cartItems = useSelector((state) => state.cart)
+const wishlistItems = useSelector((state) => state.wishlist);
 
     return (
         <>
@@ -40,7 +41,9 @@ const cartItems = useSelector((state) => state.cart)
     <div className="col text-center" >
      <Link to="#" className="text-decoration-none" ><i class="fa-sharp fa-solid fa-truck-fast"></i>
     </Link>
-    <Link to="/cart" className="text-decoration-none" ><i class="fa-regular fa-heart"></i> </Link>
+    <Link to="/wishlist" className="text-decoration-none position-relative" ><i class="fa-regular fa-heart"></i>
+    <span className="cart-badge">{wishlistItems.length}</span>
+     </Link>
     
 
 {user?.user?.email !== "mariyayasmeen000@gmail.com" ? (
