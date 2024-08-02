@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import DBContext from '../Context/DBContext';
 import { addToCart } from '../Redux/CartSlice';
@@ -27,6 +27,11 @@ export const Product = () => {
     console.log(cartItems);
     console.log("Product added to the cart");
   };
+
+  // Update local storage whenever the wishlist state changes
+  useEffect(() => {
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+  }, [cartItems]);
 
   // Helper function to create a slug
   const createSlug = (text) => {

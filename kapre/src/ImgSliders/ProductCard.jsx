@@ -54,7 +54,7 @@ const ProductCard = ({ id, image1, image2, title, code, price }) => {
 
         {/* Icon on the top right corner */}
         <button className="wishlist-button" onClick={toggleWishlist}>
-          <i className={`fa-heart icon-top-right ${isInWishlist ? 'fa-solid' : 'fa-regular'}`} ></i>
+          <i className={`fa-heart icon-top-right ${isInWishlist ? 'fa-solid' : 'fa-regular'}`} style={{ color: isInWishlist ? 'black' : 'gray' }}></i>
         </button>
         
         {/* Badge on the top left corner */}
