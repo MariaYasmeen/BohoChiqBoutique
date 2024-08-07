@@ -66,6 +66,22 @@
     color: black;
     }
   
+    @media(max-width:677px){
+      .fa-iconcss i{
+        font-size: 20px;
+        padding: 2px;
+        }
+        .cart-badge {
+          position: absolute;
+          top: -16px;
+          right: -10px;
+          padding: 2px 4px;
+          font-size: 9px;
+          min-width: 17px;
+          height: 17px;
+        }
+        
+      }
     
 .navbar {
     position: relative; 

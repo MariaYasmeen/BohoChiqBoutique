@@ -190,12 +190,30 @@ font-size: 14px;
 /* ProductCard.css */
 
 .product-card {
-width: 410px;
+width: 400px;
 overflow: hidden;
 transition: transform 0.3s ease;
-margin: 2px; /* Add margin to give space around each card */
+margin: 0px !important; 
 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light grey shadow */
 flex-shrink: 0; /* Prevent shrinking */float: left; 
+}
+
+@media(max-width:826px){
+
+
+    
+}
+
+
+@media(max-width:600px){
+  .product-card{
+    width: 400px;
+  }
+}
+
+.cart{
+  background-color: #fff;
+  padding: 4vh 5vh;
 }
 
 .product-image {

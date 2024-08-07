@@ -114,10 +114,37 @@ const wishlistItems = useSelector((state) => state.wishlist);
                   unstitched
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to ="" className="nav-link active" aria-current="page"   >
+              <li className="nav-item dropdown">
+                <Link to =""
+                  className="nav-link dropdown-toggle"
+                    
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
                   ready to wear
                 </Link>
+                <ul className="dropdown-menu">
+                  <li>
+                    <Link to ="" className="dropdown-item"   >
+                      <img src="./2.jpg" style={{ width: "250px" }} alt="Dropdown Item" />
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to ="" className="dropdown-item"   >
+                      Action
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to ="" className="dropdown-item"   >
+                      Another action
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to ="" className="dropdown-item"   >
+                      Something else here
+                    </Link>
+                  </li>
+                </ul>
               </li>
               <li className="nav-item">
                 <Link to ="/kidswear" className="nav-link active" aria-current="page" >

@@ -4,6 +4,7 @@ import React from "react";
 import fecthCollData from "../Utils/fetchCollData";
 import { ProductCard } from "../Components/ProductCard";
 import { Navbar } from "../Navbar/Navbar";
+import {Footer} from "../Components/Footer"
 import LoaderSc from "../Components/LoaderSc";
 import { Helmet } from "react-helmet-async";
 
@@ -38,7 +39,7 @@ const Menswear = () => {
         />
       ))}
     </div>
-    <Navbar />
+    <Footer />
     </>
   );
 };
