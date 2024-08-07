@@ -4,6 +4,7 @@ import React from "react";
 import fecthCollData from "../Utils/fetchCollData";
 import { ProductCard } from "../Components/ProductCard";
 import { Navbar } from "../Navbar/Navbar";
+import { Helmet } from "react-helmet-async";
 import { Footer } from "../Components/Footer";
 import LoaderSc from "../Components/LoaderSc"; // Import the LoadingScreen component
 
@@ -21,6 +22,9 @@ const Kidswear = () => {
 
   return (
     <>
+     <Helmet>
+        <title>Kidswear | M.Yasmeen</title>
+      </Helmet>
       <Navbar />
       {showLoader && <LoaderSc />} {/* Display the loading screen */}
       <div className="product-grid">

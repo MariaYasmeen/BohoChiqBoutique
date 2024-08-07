@@ -5,6 +5,7 @@ import fecthCollData from "../Utils/fetchCollData";
 import { ProductCard } from "../Components/ProductCard";
 import { Navbar } from "../Navbar/Navbar";
 import LoaderSc from "../Components/LoaderSc";
+import { Helmet } from "react-helmet-async";
 
 const Menswear = () => {
   const { data: products, loading, error } = fecthCollData("products");
@@ -19,6 +20,9 @@ const Menswear = () => {
 
   return (
     <>
+     <Helmet>
+        <title>Menswear | M.Yasmeen</title>
+      </Helmet>
     <Navbar />
     <div className="product-grid">
       {products.map((product) => (

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import useFetchCollection from "../Utils/useFetchCollection";
+import { Helmet } from "react-helmet-async";
 import LoaderSc from "../Components/LoaderSc";
 
 const Bridals = () => {
@@ -17,6 +18,10 @@ const Bridals = () => {
   
 
   return (
+    <>
+    <Helmet>
+        <title>Bridals | M.Yasmeen</title>
+      </Helmet>
     <div className="container mt-4">
       <h2>Product List</h2>
       <div className="row">
@@ -34,6 +39,7 @@ const Bridals = () => {
         ))}
       </div>
     </div>
+    </>
   );
 };
 

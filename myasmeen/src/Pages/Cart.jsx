@@ -3,6 +3,7 @@ import {Navbar} from "../Navbar/Navbar";
 import {Footer} from "../Components/Footer"
 import { Link, useNavigate  } from "react-router-dom";
 import {delFromCart} from "../Redux/CartSlice";
+import { Helmet } from "react-helmet-async";
 import { useDispatch, useSelector } from "react-redux";
 import {createSlug} from "../Functions/createSlug";
 
@@ -48,6 +49,9 @@ export const Cart = () => {
   };
   return (
     <>
+    <Helmet>
+        <title>Cart | M.Yasmeen</title>
+      </Helmet>
       <Navbar />
       <div className="card">
         <div className="row">

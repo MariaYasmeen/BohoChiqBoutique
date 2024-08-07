@@ -8,6 +8,7 @@ import {
   deleteDocumentAsync
 } from "../Utils/CRUDUtils";
 import LoaderSc from "../Components/LoaderSc";
+import { Helmet } from "react-helmet-async";
 
 const UpdateCollection = () => {
   const [collectionNames, setCollectionNames] = useState([]);
@@ -125,6 +126,10 @@ const UpdateCollection = () => {
   };
 
   return (
+    <>
+     <Helmet>
+        <title>Update | M.Yasmeen</title>
+      </Helmet>
     <div className="container mt-4">
       <h2>Update/Delete Document</h2>
       <form>
@@ -223,6 +228,7 @@ const UpdateCollection = () => {
         {isLoading && <LoaderSc />}
       </form>
     </div>
+    </>
   );
 };
 

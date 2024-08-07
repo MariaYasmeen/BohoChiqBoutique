@@ -2,6 +2,7 @@
 
 import React from "react";
 import useDynamicForm from "../Utils/useDynamicForm";
+import { Helmet } from "react-helmet-async";
 
 const AddNewCollection = () => {
   const {
@@ -21,6 +22,10 @@ const AddNewCollection = () => {
   } = useDynamicForm();
 
   return (
+    <>
+     <Helmet>
+        <title>AddNew | M.Yasmeen</title>
+      </Helmet>
     <div className="container mt-4">
       <h2>Add New Collection</h2>
       <form onSubmit={handleSubmit}>
@@ -122,6 +127,8 @@ const AddNewCollection = () => {
         )}
       </form>
     </div>
+    
+    </>
   );
 };
 

@@ -17,6 +17,10 @@ const Jewelry = () => {
   }
 
   return (
+    <>
+    <Helmet>
+        <title>Jewelry | M.Yasmeen</title>
+      </Helmet>
     <div className="product-grid">
       {products.map((product) => (
         <ProductCard
@@ -31,6 +35,7 @@ const Jewelry = () => {
         />
       ))}
     </div>
+    </>
   );
 };
 

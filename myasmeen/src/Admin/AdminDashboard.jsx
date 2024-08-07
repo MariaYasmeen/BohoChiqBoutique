@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "../Components/Footer";
 import { Outlet } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 export const AdminDashboard = () => {
     return (
         <>
+         <Helmet>
+        <title>Dashboard | M.Yasmeen</title>
+      </Helmet>
         <Navbar />
         <div className="btncontainer">
             
