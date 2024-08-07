@@ -1,66 +1,68 @@
-import React from 'react';
+// App.jsx
+
+import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Menswear } from './Pages/Menswear';
-import SignUp from './Register/SignUp';
-import { Home } from "./Pages/Home";
-import { Product } from "./Pages/Product";
-import { Wishlist } from './Pages/WishList';
-import AddProd from './Admin/AddProd';
-import EditProd from './Admin/EditProd';
-import DBState from './Context/DBState';
-import { Cart } from './Pages/Cart';
-import AdminDashboard from './Admin/AdminDashboard';
-import Account from "./Register/Account";
+import DynamicForm from "./FBDatabase/AddNewCollection";
+import CRUDForm from "./FBDatabase/UpdateCollection";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./Utils/firebaseConfig";
+import Bridals from "./Pages/Bridals";
+import Home from "./Pages/Home";
+import Menswear from "./Pages/Menswear";
+import Jewelry from "./Pages/Jewelry";
+import { Product } from "./Components/Product";
+import Register from "./Register/Register";
+import { AdminDashboard } from "./Admin/AdminDashboard";
+import SignIn from "./Register/SignIn";
+import AddNewCollection from "./FBDatabase/AddNewCollection";
+import Kidswear from "./Pages/Kidswear";
 import './App.css';
-import SignIn from './Register/SignIn';
+import UpdateCollection from "./FBDatabase/UpdateCollection";
+import { Cart } from "./Pages/Cart";
+import Account from "./Register/Account";
+import { MyWishList } from "./Pages/MyWishList";
 
-function App() {
+const App = () => {
   return (
-    <DBState>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/wishlist" element={<Wishlist />} />
-          <Route path="/account/*" element={<Account />} />
-          <Route path="/cart" element={
-            <UserRoute>
-              <Cart />
-            </UserRoute>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/kidswear" element={<Kidswear />} />
+        <Route path="/jewelry" element={<Jewelry />} />
+        <Route path="/account/*" element={<Account />} />
+        <Route path="/mywishlist" element={<MyWishList />} />
+        <Route path="/admindashboard/addnewcollection" element={<AddNewCollection />} />
+        <Route path="/admindashboard/updatecollection" element={
+         <AdminRoute>
+         <UpdateCollection />
+       </AdminRoute>
           } />
-          <Route path="signup" element={<SignUp />} />
-          <Route path="signin" element={<SignIn />} />
-          <Route path='/admindashboard' element={
-            <AdminRoute>
-              <AdminDashboard />
-            </AdminRoute>
-          } />
-          <Route path='/addproduct' element={
-            <AdminRoute>
-              <AddProd />
-            </AdminRoute>
-          } />
-          <Route path='/editproduct' element={
-            <AdminRoute>
-              <EditProd />
-            </AdminRoute>
-          } />
-          <Route path="/menswear" element={<Menswear />} />
-          <Route path="/product/:title" element={<Product />} />
-        </Routes>
-      </BrowserRouter>
-    </DBState>
+        <Route path="/register" element={<Register />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/admindashboard" element={
+          <AdminRoute>
+            <AdminDashboard />
+          </AdminRoute>
+        } />
+        <Route path="/cart" element={
+          <UserRoute>
+            <Cart />
+          </UserRoute>
+        } />
+        <Route path="/menswear" element={<Menswear />} />
+        <Route path="/product/:title" element={<Product />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
 
 // UserRoute component
 export const UserRoute = ({ children }) => {
-  const user = localStorage.getItem("user");
+  const user = JSON.parse(localStorage.getItem("user"));
   if (user) {
     return children;
   } else {
@@ -69,9 +71,9 @@ export const UserRoute = ({ children }) => {
 }
 
 // AdminRoute component
-const AdminRoute = ({ children }) => {
-  const admin = JSON.parse(localStorage.getItem("user"));
-  if (admin && admin.user.email === "mariyayasmeen000@gmail.com") {
+export const AdminRoute = ({ children }) => {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user && user.email === "mariyayasmeen000@gmail.com") {
     return children;
   } else {
     return <Navigate to="/signin" />;

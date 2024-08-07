@@ -1,5 +1,5 @@
 import React from "react";
-import AutoPlay from "./Autoplay"
+import AutoPlay from "./Autoplay";
 import Image from "../ImgSliders/Image";
 
 export const Cards = () => {
@@ -38,7 +38,6 @@ export const Cards = () => {
     </div>
 
 
-    <AutoPlay/>
 
 
         <div className="mariabslider" style={{ marginTop:"50px"}} >

@@ -1,15 +1,33 @@
-import React from "react";
+import React , { useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 import "./Components.css"
 import { useSelector } from "react-redux";
 export const Navbar = () =>{
 
-const user = JSON.parse(localStorage.getItem("user"));
-console.log(user);
+  const [user, setUser] = useState(null);
 
-const cartItems = useSelector((state) => state.cart)
-const wishlistItems = useSelector((state) => state.wishlist);
+  // Use selectors to get cart and wishlist items from Redux
+  const cartItems = useSelector((state) => state.cart);
+  const wishlistItems = useSelector((state) => state.wishlist);
 
+  // Use effect to load user from localStorage once
+  useEffect(() => {
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    setUser(storedUser);
+    console.log("User loaded from localStorage:", storedUser);
+  }, []); // Empty dependency array ensures this runs once on component mount
+
+  // Optional useEffect if you need to perform side effects when cartItems change
+  useEffect(() => {
+    console.log("Cart items updated:", cartItems);
+    // Add any side effects or logic you need when cartItems change
+  }, [cartItems]);
+
+  // Optional useEffect if you need to perform side effects when wishlistItems change
+  useEffect(() => {
+    console.log("Wishlist items updated:", wishlistItems);
+    // Add any side effects or logic you need when wishlistItems change
+  }, [wishlistItems]);
     return (
         <>
           <div className=" d-flex justify-content-center align-items-center" style={{ backgroundColor: "black" }}>
@@ -42,7 +60,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
      <Link to="#" className="text-decoration-none" ><i class="fa-sharp fa-solid fa-truck-fast"></i>
     </Link>
     <Link to="/wishlist" className="text-decoration-none position-relative" ><i class="fa-regular fa-heart"></i>
-    <span className="cart-badge">{wishlistItems.length}</span>
+    <span className="cart-badge">0</span>
      </Link>
     
 
@@ -133,7 +151,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                   </div>
                   </div>
                   </div></li>
-        <li class="nav-item"><Link to="" class="nav-link">kids</Link>
+        <li class="nav-item"><Link to="/kidswear" class="nav-link">kids</Link>
         <div className="mega-box" >
                 <div className="content" >
                   <div className="row" >
@@ -218,7 +236,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                   </div>
                   </div>
         </li> 
-        <li class="nav-item"><Link to="#" class="nav-link">couture</Link>
+        <li class="nav-item"><Link to="" class="nav-link">couture</Link>
         <div className="mega-box" style={{left: "-10px"}} >
                 <div className="content" >
                   <div className="row" >

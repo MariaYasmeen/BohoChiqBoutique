@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import HoverImg from "../ImgSliders/HoverImg";
+import HoverImg from "../ImgSliders/HoverImg"
 
 function AutoPlay() {
   const settings = {

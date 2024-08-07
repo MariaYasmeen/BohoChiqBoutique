@@ -3,11 +3,10 @@
 import React from "react";
 import fecthCollData from "../Utils/fetchCollData";
 import { ProductCard } from "../Components/ProductCard";
-import { Navbar } from "../Navbar/Navbar";
 import LoaderSc from "../Components/LoaderSc";
 
-const Menswear = () => {
-  const { data: products, loading, error } = fecthCollData("products");
+const Jewelry = () => {
+  const { data: products, loading, error } = fecthCollData("jewelry");
 
   if (loading) {
     return <LoaderSc />;
@@ -18,8 +17,6 @@ const Menswear = () => {
   }
 
   return (
-    <>
-    <Navbar />
     <div className="product-grid">
       {products.map((product) => (
         <ProductCard
@@ -30,13 +27,11 @@ const Menswear = () => {
           title={product.title || "No Name"}
           code={product.desc || "No Description"}
           price={product.price || "No Price"}
-          collectionName="products" // Pass the collection name
+          collectionName="jewelry" // Pass the collection name
         />
       ))}
     </div>
-    <Navbar />
-    </>
   );
 };
 
-export default Menswear;
+export default Jewelry;
