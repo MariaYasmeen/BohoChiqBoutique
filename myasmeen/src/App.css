@@ -99,7 +99,7 @@ html {
 .slides {
   padding: 0px !important;
   overflow: hidden;
-  width: 70vmin;
+  width: 62vmin;
   height: 100vmin;
   
   li {
@@ -118,6 +118,10 @@ html {
   }
 }
 
+.slides li img{
+width: 400px;
+height: 600px;
+}
 
 @keyframes slide {
   0% {
@@ -172,7 +176,7 @@ html {
 }
 
 }
-@media(max-width:700px){
+@media(max-width:900px){
 
   .productcss{
     flex-direction: column;
@@ -267,7 +271,8 @@ font-size: 16px;
   color: black;
   font-size: 43px;
   letter-spacing: 2px;
-  text-decoration: none;
+  text-shadow: none !important;
+  text-decoration: none !important;
   text-align: center;
 }
 

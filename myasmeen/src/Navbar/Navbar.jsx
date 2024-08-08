@@ -109,15 +109,15 @@ const wishlistItems = useSelector((state) => state.wishlist);
             id="navbarsExample08"
           >
             <ul className="navbar-nav nav ulcss nav-links">
-              <li className="nav-item">
+            <li className="nav-item">
                 <Link to ="" className="nav-link active" aria-current="page"   >
-                  unstitched
+                  new arrivals
                 </Link>
               </li>
+          
               <li className="nav-item dropdown">
                 <Link to =""
-                  className="nav-link dropdown-toggle"
-                    
+                  className="nav-link dropdown-toggle"     
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
@@ -126,7 +126,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                 <ul className="dropdown-menu">
                   <li>
                     <Link to ="" className="dropdown-item"   >
-                      <img src="./2.jpg" style={{ width: "250px" }} alt="Dropdown Item" />
+                      <img src="./slick2.png" style={{ width: "270px" }} alt="Dropdown Item" />
                     </Link>
                   </li>
                   <li>

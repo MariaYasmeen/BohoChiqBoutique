@@ -32,10 +32,10 @@ const Kidswear = () => {
           <ProductCard
             key={product.id}
             id={product.id}
-            image1={product.imageURL || "No image"}
-            image2={product.imageURL || "No image"}
+            image1={product.image1 || "No image"}
+            image2={product.image2 || "No image"}
             title={product.title || "No Name"}
-            code={product.desc || "No Description"}
+            code={product.code || "No Description"}
             price={product.price || "No Price"}
             collectionName="Kidswear" // Pass the collection name
           />

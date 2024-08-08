@@ -70,18 +70,18 @@ export const Cart = () => {
             </div>
 
             {cartItems.map((item, index) => {
-              const { title, price, desc, imageURL } = item;
+              const { title, price, code, image1 } = item;
               const slug = createSlug(title); // Generate slug for the title
 
               return (
                 <div className="row border-top border-bottom" key={index}>
                   <div className="row main align-items-center">
                     <div className="col-2">
-                      <img className="img-fluid" src={imageURL} alt={title} />
+                      <img className="img-fluid" src={image1} alt={title} />
                     </div>
                     <div className="col">
                       <div className="row text-muted">{title}</div>
-                      <div className="row">{desc}</div>
+                      <div className="row">{code}</div>
                     </div>
                     <div className="col">
                       <a href="#">-</a>

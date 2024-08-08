@@ -7,7 +7,7 @@ export const Cards = () => {
         <>
 <div className="row featurette centerectextimg">
       <div className="col-md-7 textcenter">
-        <h2 className="featurette-heading fw-normal lh-1">Where Fashion Journey Begins </h2>
+        <h2 className="featurette-heading  fw-normal lh-1">Where Fashion Journey Begins ...</h2>
         <p className="lead text-center">Why settle for ordinary when you can have extraordinary? Our everyday essentials are designed to bring style and comfort to your daily routine. Start your fashion adventure today and explore the endless possibilities. Transform your look and make a statement wherever you go.</p>
       </div>
       <div className="col-md-5 " style={{paddingTop:"10px"}}>
