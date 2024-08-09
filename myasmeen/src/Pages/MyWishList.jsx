@@ -84,7 +84,7 @@ export const MyWishList = () => {
                         PKR {price} {/* Display item price */}
                         <button
                           onClick={() => deleteWishList(item)}
-                          className="fa-iconcss"
+                          className="del-icon"
                         >
                           <i className="fa-solid fa-x"></i>
                         </button>

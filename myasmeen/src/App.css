@@ -140,16 +140,23 @@ height: 600px;
     z-index: 1;
   }
 }
-.productcss{
-    display: flex;
-    margin-top: 3rem;
-}
-.productcss div{
+.prodslidercss {
+  margin-top: 2rem;
     display: flex;
     flex-direction: row;
 }
+.prodslidercss div{
+  width: 97%;
+}
+.prodimg{
+  margin: 0px;
+}
+.proddesc{
+  margin: 0px 20px 0px 0px;
 
-@media(max-width:1000px){
+}
+
+/* @media(max-width:1000px){
 
 .thumbnails {
   padding-left: 10px;
@@ -203,10 +210,13 @@ height: 600px;
       height: 109vmin;
     }
   }
-  
-  
+  } */
+  .del-icon{ 
+    font-size: 19px;
+    background-color: white !important;
+    padding-left: 20px;
+    border: none !important;
   }
-  
 
 .cont2{
   font-size: 15px;
@@ -414,3 +424,27 @@ transform:  all 0.3s ease;
 border-radius: 6px !important;
 box-shadow: none;
 }
+/* Filter Css */
+.filtercss{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+height: 30px;
+font-size: 18px;
+letter-spacing: 2px;
+margin : 10px 0px 10px 0px;
+background-color: whitesmoke;
+}
+.filtercss div{
+  padding: 20px;
+
+}
+.filterropdown{
+  width:400px;
+  box-shadow: 0px !important;
+  height:600px !important;
+}
+.filterropdown li{
+padding: 5px;
+}
+

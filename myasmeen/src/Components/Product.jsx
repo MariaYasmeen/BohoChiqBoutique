@@ -9,6 +9,7 @@ import { Navbar } from "../Navbar/Navbar";
 import { Footer } from "./Footer";
 import { useDispatch, useSelector } from 'react-redux';
 import { AddInWishList } from "../Functions/AddInWishList";
+import ProductSlider from "../ImgSliders/ProductSlider";
 
 export const Product = () => {
   const { title } = useParams();
@@ -58,6 +59,11 @@ export const Product = () => {
     dispatch(addToCart(product));
     console.log("Product added to the cart");
   };
+  const images = [
+ ` ${image1}`,  
+ ` ${image2}`,
+  ` ${image3}`,
+  ];
 
   return (
     <>
@@ -66,41 +72,13 @@ export const Product = () => {
         <meta name="description" content={`Buy ${itemTitle} for PKR ${price}.`} />
       </Helmet>
       <Navbar />
-      <div className="productcss">
-        <div className="con1">
-          <div className="imgcontainer">
-            <ul className="thumbnails">
-              <li>
-                <Link to="#slide1">
-                  <img src={image1} alt={itemTitle} />
-                </Link>
-              </li>
-              <li>
-                <Link to="#slide2">
-                  <img src={image2} alt={itemTitle} />
-                </Link>
-              </li>
-              <li>
-                <Link to="#slide3">
-                  <img src={image3} alt={itemTitle} />
-                </Link>
-              </li>
-            </ul>
-
-            <ul className="slides">
-              <li id="slide1">
-                <img src={image1} alt={itemTitle} />
-              </li>
-              <li id="slide2">
-                <img src={image2} alt={itemTitle} />
-              </li>
-              <li id="slide3">
-                <img src={image3} alt={itemTitle} />
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="cont2">
+      <div className="prodslidercss">
+      <div className="prodimg">
+         <ProductSlider images={images} />
+         </div>
+         <div className="proddesc">
+   
+        <div className="">
           <h4 style={{ fontWeight: "600" }}>{itemTitle}</h4>
           <p>JS-026-GOLD | IN STOCK</p>
 
@@ -110,14 +88,25 @@ export const Product = () => {
           </h5>
           <p>GST Inclusive</p>
           <div className="cont2btns">
-            <button
+            <button 
               style={{ backgroundColor: "black", color: "white" }}
               onClick={() => handleAddCart(item)}
             >
-              ADD TO CART
+              ADD TO BAG<i style={{marginLeft:"10px"}} class="fa-solid fa-bag-shopping"></i>
             </button>
             <button onClick={handleWishlist}>
-              {isInWishlist ? "Remove from Wishlist" : "Add to Wishlist"}
+              {isInWishlist ? (
+                <>
+                Remove from Wishlist 
+                <i style={{marginLeft:"6px"}}  className={`fa-heart fa-solid`}/>
+
+                </> 
+                ) : (
+                  <>
+                  Add to Wishlist
+                  <i style={{marginLeft:"6px"}}  className={`fa-heart fa-regular`}/>
+                  </>
+                )}
             </button>
           </div>
           <p>
@@ -125,7 +114,7 @@ export const Product = () => {
             may vary slightly due to photographic lighting or your device
             settings.
           </p>
-          <p>3 to 5 Working Days Nationwide Shipping</p>
+          <p className="fa-iconcss"><i class="fa-solid fa-ship "></i>3 to 5 Working Days Nationwide Shipping</p>
           <hr />
           <h5 style={{ fontWeight: "900" }}>Description</h5>
           <p style={{ fontSize: "14px", letterSpacing: "1px" }}>{desc}</p>
@@ -136,7 +125,8 @@ export const Product = () => {
             to get more details on our shipping & delivery policies.
           </h7>
         </div>
-      </div>
+        </div>
+        </div>
       <Footer />
     </>
   );

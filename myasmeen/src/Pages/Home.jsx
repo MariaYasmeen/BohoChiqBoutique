@@ -5,13 +5,24 @@
   import {Footer} from "../Components/Footer"
   import { Link } from "react-router-dom";
   import { Navbar } from "../Navbar/Navbar";
+import ProductSlider from "../ImgSliders/ProductSlider";
   
   
   const App = () => {
+    const images = [
+      'https://www.mariab.pk/cdn/shop/files/GTSSS2419GreyCloseup-1_540x.jpg?v=1708434367',
+      'https://www.mariab.pk/cdn/shop/files/GTSSS2419GreyCloseup-1_540x.jpg?v=1708434367',
+      'https://www.mariab.pk/cdn/shop/files/GTSSS2419GreyCloseup-1_540x.jpg?v=1708434367',
+      'https://www.mariab.pk/cdn/shop/files/GTSSS2419GreyCloseup-1_540x.jpg?v=1708434367',
+    ];
+  
    
     return (
       <>
       <Navbar />
+      <h1>Image Slider</h1>
+      <ProductSlider images={images} />
+
       <div id="carouselExampleAutoplaying" className="carousel slide" data-bs-ride="carousel">
     <div className="carousel-inner">
       <div className="carousel-item active">

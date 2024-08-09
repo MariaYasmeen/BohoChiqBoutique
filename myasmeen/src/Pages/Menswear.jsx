@@ -7,6 +7,7 @@ import { Navbar } from "../Navbar/Navbar";
 import {Footer} from "../Components/Footer"
 import LoaderSc from "../Components/LoaderSc";
 import { Helmet } from "react-helmet-async"; 
+import { Filter } from "../Components/Filter";
 
 const Menswear = () => {
   const { data: products, loading, error } = fecthCollData("products");
@@ -26,6 +27,7 @@ const Menswear = () => {
         <meta name="description" content={`See new Collection for Men.`} /> {/* Add meta description */}
       </Helmet>
     <Navbar />
+    <Filter />
     <div className="product-grid">
       {products.map((product) => (
         <ProductCard

@@ -94,7 +94,7 @@ export const Cart = () => {
                       PKR {price} {/* Display item price */}
                       <button
                         onClick={() => deleteCart(item)}
-                        className="fa-iconcss"
+                        className="del-icon"
                       >
                         <i className="fa-solid fa-x"></i>
                       </button>

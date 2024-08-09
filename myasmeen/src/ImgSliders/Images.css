@@ -286,3 +286,101 @@ justify-content: center; /* Optional: center align the cards */
 gap: 6px; /* Spacing between product cards */
 margin: 0 auto; /* Center the grid container */
 }
+
+
+.image-slider {
+  display: flex;
+  margin-left: 20px;
+  flex-direction: row;
+  align-items: flex-start;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.display-image {
+  flex: 3;
+  margin-right: 1rem;
+  transition: transform 0.3s ease-in-out;
+}
+
+.display-image img {
+  width: 90%;
+  height: auto;
+  margin: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.thumbnail-container {
+  flex: 1;
+  margin-left: 20px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 90px;
+}
+
+.thumbnail {
+  margin: 0rem  0.9rem 0.2rem 0.5rem ;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.thumbnail img {
+  width: 90%;
+  margin: 5px;
+  padding: 2px;
+  height: auto;
+  border: 3px solid black;
+  opacity: 0.7 grey;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.thumbnail.active img {
+  border-color: white;
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.thumbnail:hover img {
+  transform: scale(1.05);
+}
+
+.zoom-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.zoom-wrapper img {
+  display: block;
+  width: 97%;
+  height: auto;
+}
+
+.zoom-container {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.zoom-image {
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+}
+
+.zoom-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 970%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+
+.zoom-overlay.zoom {
+  opacity: 1;
+}
+

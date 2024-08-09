@@ -20,7 +20,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
 
     <>
       <div
-        className="d-flex justify-content-center align-items-center"
+        className="d-flex justify-content-center align-items-center top-strip"
         style={{ backgroundColor: "black" }}
       >
         <div className="mx-5">
@@ -28,7 +28,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
             to=""
             className="text-decoration-none"
             style={{ color: "white" }}
-          > Free Shipping Over PKR 5000
+          > FREE SHIPPING OVER PKR 5,000
           </Link>
         </div>
         <div className="mx-5">
@@ -36,18 +36,23 @@ const wishlistItems = useSelector((state) => state.wishlist);
             to=""
             className="text-decoration-none"
             style={{ color: "white" }}
-          >Contact Us: +9221111627422
+          >FOR CUSTOMIZATIONS OR PERSONAL ASSISTANCE, WHATSAPP US AT | +9221111627422
           </Link>
         </div>
       </div>
 
       <div className="fa-iconcss">
         <div className="row align-items-center justify-content-between">
-          <div className="col text-center">
+        
+        <div className="col text-center">
+            <Link to="#" className="text-decoration-none">
+            <i class="fa-solid fa-clipboard-question"></i>
+            </Link>
             <Link to="#" className="text-decoration-none">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Link>
           </div>
+    
           <div className="col text-center">
             <Link
               to="/"
@@ -72,7 +77,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
       
             {user && user.email !== "mariyayasmeen000@gmail.com" ? (
         <Link to="/cart" className="text-decoration-none position-relative">
-          <i className="fa-sharp fa-solid fa-cart-shopping"></i>
+         <i  class="fa-solid fa-bag-shopping"></i>
           <span className="cart-badge">{cartItems.length}</span>
         </Link>
       ) : (
