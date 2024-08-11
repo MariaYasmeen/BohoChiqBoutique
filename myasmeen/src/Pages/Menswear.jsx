@@ -17,7 +17,7 @@ const Menswear = () => {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div>{error}</div>;S
   }
 
   return (
@@ -27,7 +27,9 @@ const Menswear = () => {
         <meta name="description" content={`See new Collection for Men.`} /> {/* Add meta description */}
       </Helmet>
     <Navbar />
+    
     <Filter />
+    
     <div className="product-grid">
       {products.map((product) => (
         <ProductCard

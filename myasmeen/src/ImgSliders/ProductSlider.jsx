@@ -11,6 +11,13 @@ const ProductSlider = ({ images }) => {
 
   return (
     <div className="image-slider">
+
+<div className="display-image">
+      <ZoomImage >
+        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
+        </ZoomImage>
+      </div>
+      
          <div className="thumbnail-container">
         {images.map((image, index) => (
           <div
@@ -21,12 +28,6 @@ const ProductSlider = ({ images }) => {
             <img src={image} alt={`Thumbnail ${index}`} />
           </div>
         ))}
-      </div>
-
-      <div className="display-image">
-      <ZoomImage >
-        <img src={images[currentIndex]} alt={`Slide ${currentIndex}`} />
-        </ZoomImage>
       </div>
      
     </div>

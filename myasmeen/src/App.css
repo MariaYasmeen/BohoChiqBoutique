@@ -141,76 +141,30 @@ height: 600px;
   }
 }
 .prodslidercss {
-  margin-top: 2rem;
+  margin-top: 20px;
     display: flex;
+    width: 100%;
     flex-direction: row;
 }
 .prodslidercss div{
-  width: 97%;
+  width: 100%;
 }
 .prodimg{
-  margin: 0px;
+ padding: 15px;
 }
 .proddesc{
-  margin: 0px 20px 0px 0px;
+  padding: 20px 20px 20px 0px;
 
 }
-
-/* @media(max-width:1000px){
-
-.thumbnails {
-  padding-left: 10px;
-  padding-right: 3px;
-  margin: 0px;
+@media(max-width:600px){
+  .prodslidercss {
+      flex-direction: column;
+  } 
+  .proddesc{
+    padding:  20px;
   
-  img {
-    width: 12vmin;
-    margin: 2px;
   }
 }
-.slides {
-  li {
-    width: 55vmin;
-    height: 100%;
-  }
-  img  {
-    width: 80%;
-    height: 80%;
-  }
-}
-.imgcontainer {
-  width: 400px
-}
-
-}
-@media(max-width:900px){
-
-  .productcss{
-    flex-direction: column;
-  }
-  .thumbnails {
-    padding-left: 30px;
-    padding-right: 6px;
-    margin: 0px;
-    height: 58px;
-
-    img {
-      width: 13vmin;
-      height: 100%;
-      margin: 4px;
-    }
-  }
-
-.slides {
-    width: 79vmin;
-    height: 90vmin;
-    
-    li {
-      width: 72vmin;
-      height: 109vmin;
-    }
-  }
-  } */
   .del-icon{ 
     font-size: 19px;
     background-color: white !important;
