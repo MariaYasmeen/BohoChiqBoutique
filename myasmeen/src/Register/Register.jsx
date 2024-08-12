@@ -1,59 +1,78 @@
 import React, { useState } from 'react';
-import { auth } from "../Utils/firebaseConfig";
+import { auth, db } from '../Utils/firebaseConfig'; // Assuming db is the Firestore instance for saving user data
 import LoaderSc from '../Components/LoaderSc';
-import { signInWithEmailAndPassword } from 'firebase/auth';  // Correct import
+import { createUserWithEmailAndPassword } from 'firebase/auth';  // Import for creating user
 import { Link, useNavigate } from 'react-router-dom';
+import { doc, setDoc } from 'firebase/firestore';  // For saving user data to Firestore
 import "./Register.css";
 
-function SignIn() {
+function SignUp() {
   // State variables
   const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");  // Changed variable name to email
-  const [password, setPassword] = useState("");  // Changed variable name to password
-  const [error, setError] = useState(null); // Added error state
+  const [name, setName] = useState("");  // New state for user's name
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const navigate = useNavigate();
 
-  // Sign in function
-  const signIn = async (e) => {
-    e.preventDefault();  // Prevent default form submission
+  // Sign up function
+  const signUp = async (e) => {
+    e.preventDefault();
 
     try {
-      setLoading(true); // Start loading
-      setError(null); // Clear previous errors
+      setLoading(true);
+      setError(null);
 
-      // Sign in using Firebase
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log('User signed in:', result.user);
+      // Create user using Firebase
+      const result = await createUserWithEmailAndPassword(auth, email, password);
+      console.log('User signed up:', result.user);
+
+      // Save user info to Firestore
+      await setDoc(doc(db, "users", result.user.uid), {
+        uid: result.user.uid,
+        name: name,  // Save the user's name
+        email: email,
+      });
 
       // Save user info to localStorage
       localStorage.setItem("user", JSON.stringify(result.user));
 
-      // Navigate to home or another page on successful sign-in
+      // Navigate to home or another page on successful sign-up
       navigate("/");
 
     } catch (error) {
-      console.log('Sign-in error:', error);
-
-      // Update error state
-      setError("Invalid email or password. Please try again.");
-
+      console.log('Sign-up error:', error);
+      setError("Error creating account. Please try again.");
     } finally {
-      // Stop loading
       setLoading(false);
     }
   };
 
   return (
-    <div className="signupcss"> {/* Updated class name */}
-      {loading && <LoaderSc />} {/* Render Loader conditionally */}
-      <main className="signin-css"> {/* Updated class name */}
-        <form onSubmit={signIn}>
-          <h1 className="h6 mb-3 fw-normal">Please Sign In</h1>
+    <div className="signupcss">
+      {loading && <LoaderSc />}
+      <main className="signin-css">
+        <form onSubmit={signUp}>
+          <h1 className="h6 mb-3 fw-normal">Please Sign Up</h1>
 
           {/* Show error message */}
           {error && <div className="alert alert-danger">{error}</div>}
 
+          <div className="form-floating">
+            <input 
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              name="name"
+              required
+              className="form-control" 
+              id="nameInput"
+              placeholder="John Doe" 
+              aria-describedby="nameHelp"
+            />
+            <label htmlFor="nameInput">Full Name</label>
+          </div>
           <div className="form-floating">
             <input 
               type="email"
@@ -95,12 +114,11 @@ function SignIn() {
             </label>
           </div>
           <button className="btn btn-primary w-100 py-2" type="submit" disabled={loading}>
-            {loading ? "Signing In..." : "Sign In"}
+            {loading ? "Signing Up..." : "Sign Up"}
           </button>
 
-          {/* Link to register page */}
           <h6 style={{ marginTop: "20px" }}>
-            Don't have an account? <Link to='/account/register'>Sign Up</Link>
+            Already have an account? <Link to='/signin'>Sign In</Link>
           </h6>
 
           <p className="mt-5 mb-3 text-body-secondary">© 2024 Developed by Maria Yasmeen</p>
@@ -110,4 +128,4 @@ function SignIn() {
   );
 };
 
-export default SignIn;
+export default SignUp;
