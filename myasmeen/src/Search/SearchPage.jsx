@@ -5,11 +5,18 @@ import { ProductCard } from '../Components/ProductCard';
 import { Navbar } from '../Navbar/Navbar';
 import { Footer } from '../Components/Footer';
 import LoaderSc from '../Components/LoaderSc';
+import { useTitle } from '../Context/TitleContext';
 
 const SearchPage = () => {
     const location = useLocation();
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { setTitle } = useTitle();
+
+    useEffect(() => {
+        setTitle({title}); 
+    }, [setTitle]);
+
 
     const searchTerm = (location.state?.searchTerm || '').toString();
 
@@ -35,12 +42,11 @@ const SearchPage = () => {
             </Helmet>
             <Navbar />
             <div>
-                <h2>Search Results</h2>
+                <h2>{searchTerm}</h2>
                 {loading ? (
                     <LoaderSc />
                 ) : (
                     <>
-                        <h5>{title}</h5>
                         <div className="product-grid">
                             {results.length > 0 ? (
                                 results.map((result) => (
