@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
-import searchFirebase from "./searchFirebase";
+import React from 'react';
 
 const SearchBar = ({ searchTerm, onSearch, onChange }) => {
-    
+
+    const handleSearch = (event) => {
+        event.preventDefault(); 
+        onSearch(); 
+    };
+
     return (
-        
-        <form onSubmit={onSearch}>
+        <form onSubmit={handleSearch}>
             <input 
                 type="text" 
                 value={searchTerm} 
@@ -18,4 +21,3 @@ const SearchBar = ({ searchTerm, onSearch, onChange }) => {
 };
 
 export default SearchBar;
-
