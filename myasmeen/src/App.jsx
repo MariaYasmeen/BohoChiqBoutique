@@ -21,6 +21,7 @@ import UpdateCollection from "./FBDatabase/UpdateCollection";
 import { Cart } from "./Pages/Cart";
 import Account from "./Register/Account";
 import { MyWishList } from "./Pages/MyWishList";
+import SearchPage from "./Search/SearchPage";
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/kidswear" element={<Kidswear />} />
         <Route path="/jewelry" element={<Jewelry />} />
+       <Route path="/search" element={<SearchPage />} />
         <Route path="/account/*" element={<Account />} />
         <Route path="/mywishlist" element={<MyWishList />} />
         <Route path="/admindashboard/addnewcollection" element={<AddNewCollection />} />

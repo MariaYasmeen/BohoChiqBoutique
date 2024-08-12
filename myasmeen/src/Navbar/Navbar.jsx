@@ -48,7 +48,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
             <Link to="#" className="text-decoration-none">
             <i class="fa-solid fa-clipboard-question"></i>
             </Link>
-            <Link to="#" className="text-decoration-none">
+            <Link to="/search" className="text-decoration-none">
               <i className="fa-solid fa-magnifying-glass"></i>
             </Link>
           </div>
