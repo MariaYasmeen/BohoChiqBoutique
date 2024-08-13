@@ -1,4 +1,5 @@
 import React from "react";
+import BoxButton from "../Animations/BoxButton";
 import "./Images.css"
 
 const Image = ({ imageSrc, heading, subheading, buttonText }) => {
@@ -10,7 +11,7 @@ const Image = ({ imageSrc, heading, subheading, buttonText }) => {
           <div className="text">
             <h2>{heading}</h2>
             <p>{subheading}</p>
-            <button className="action-button">{buttonText}</button>
+            <BoxButton buttonName={buttonText} />
           </div>
         </div>
       </div>
