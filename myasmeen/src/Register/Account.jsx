@@ -3,7 +3,11 @@ import { useAuth } from '../Context/UserAuthContext';
 import { useNavigate, Outlet } from 'react-router-dom';
 import LoaderSc from '../Components/LoaderSc';
 import { Navbar } from '../Navbar/Navbar';
+<<<<<<< HEAD
 import Register from './Register';
+=======
+import SignUp from './Register';
+>>>>>>> bdd22d24f7a583954ccd10fba45860157903b53f
 import "./Register.css";
 
 const Account = () => {
@@ -38,7 +42,7 @@ const Account = () => {
         ) : (
           <div className="auth-options">
             <h4>So glad you are here.</h4>
-            <Register />
+            <SignUp />
           </div>
         )}
       </div>

@@ -2,6 +2,13 @@ import React from 'react';
 
 const SearchBar = ({ searchTerm, onSearch, onChange }) => {
 
+<<<<<<< HEAD
+=======
+    const handleSearch = (event) => {
+        event.preventDefault(); 
+        onSearch(); 
+    };
+>>>>>>> bdd22d24f7a583954ccd10fba45860157903b53f
 
     return (
         <form onSubmit={handleSearch}>

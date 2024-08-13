@@ -1,9 +1,37 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import SearchBar from "../Search/SearchBar";
+import searchFirebase from "../Search/searchFirebase";
 import { useSelector } from "react-redux";
 import './Navbar.css'; // Import the CSS file for styling
 
+import slick2 from "/public/slick2.png"
+import luxpret  from "/public/luxpret.png"
+import womenwear from "/public/womenwear.jpg"
+
+
+
 export const Navbar = () => {
+
+  const [searchVisible, setSearchVisible] = useState(false); const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearchResults = (searchTerm, results) => {
+    console.log('Search Term in Home:', searchTerm); // Debugging line
+    console.log('Search Results in Home:', results); // Debugging line
+    navigate('/search', { state: { searchTerm, results } });
+};
+
+const handleSearch = async () => {
+    const fetchedResults = await searchFirebase(searchTerm);
+    handleSearchResults(searchTerm, fetchedResults);
+
+};
+
+  const toggleSearchBar = () => {
+    setSearchVisible(!searchVisible);
+  };
 
   let user;
   try {
@@ -46,10 +74,17 @@ const wishlistItems = useSelector((state) => state.wishlist);
         
         <div className="col text-center">
             <Link to="#" className="text-decoration-none">
-            <i class="fa-solid fa-clipboard-question"></i>
+              <i className="fa-solid fa-clipboard-question"></i>
             </Link>
-            <Link to="/search" className="text-decoration-none">
+            <Link
+              to="#"
+              onClick={toggleSearchBar}
+              className="text-decoration-none"
+            >
               <i className="fa-solid fa-magnifying-glass"></i>
+            </Link>
+            <Link to="#" className="text-decoration-none">
+              <i className="fa-sharp fa-solid fa-truck-fast"></i>
             </Link>
           </div>
     
@@ -63,9 +98,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
             </Link>
           </div>
           <div className="col text-center fa-iconcss">
-            <Link to="#" className="text-decoration-none">
-              <i className="fa-sharp fa-solid fa-truck-fast"></i>
-            </Link>
+           
             {user && user.email !== "mariyayasmeen000@gmail.com" ? (
         <Link to="/mywishlist" className="text-decoration-none position-relative">
             <i className="fa-regular fa-heart"></i>
@@ -131,7 +164,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                 <ul className="dropdown-menu">
                   <li>
                     <Link to ="" className="dropdown-item"   >
-                      <img src="./slick2.png" style={{ width: "270px" }} alt="Dropdown Item" />
+                      <img src={slick2} style={{ width: "270px" }} alt="Dropdown Item" />
                     </Link>
                   </li>
                   <li>
@@ -177,7 +210,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                 <ul className="dropdown-menu">
                   <li>
                     <Link to ="" className="dropdown-item"   >
-                      <img src="./51.png" style={{ width: "250px" }} alt="Dropdown Item" />
+                      <img src={luxpret} style={{ width: "250px" }} alt="Dropdown Item" />
                     </Link>
                   </li>
                   <li>
@@ -213,7 +246,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                 <ul className="dropdown-menu">
                   <li>
                     <Link to ="" className="dropdown-item"   >
-                      <img src="./3.jpg" style={{ width: "250px" }} alt="Dropdown Item" />
+                      <img src={womenwear} style={{ width: "250px" }} alt="Dropdown Item" />
                     </Link>
                   </li>
                   <li>
@@ -243,6 +276,16 @@ const wishlistItems = useSelector((state) => state.wishlist);
           </div>
         </div>
       </nav>
+      {searchVisible && (
+        <div className="search-navbar">
+          <div className="container">
+            <SearchBar 
+            searchTerm={searchTerm} 
+            onSearch={handleSearch} 
+            onChange={(e) => setSearchTerm(e.target.value)}/>
+          </div>
+        </div>
+      )}
     </>
   );
 };

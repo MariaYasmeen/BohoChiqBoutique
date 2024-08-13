@@ -5,11 +5,18 @@ import { Navbar } from '../Navbar/Navbar';
 import { Helmet } from 'react-helmet-async';
 import { Footer } from '../Components/Footer';
 import LoaderSc from '../Components/LoaderSc';
+import { useTitle } from '../Context/TitleContext';
 
 const SearchPage = () => {
     const location = useLocation();
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { setTitle } = useTitle();
+
+    useEffect(() => {
+        setTitle({title}); 
+    }, [setTitle]);
+
 
     // Ensure searchTerm is a string
     const searchTerm = (location.state?.searchTerm || '').toString();
@@ -32,12 +39,11 @@ const SearchPage = () => {
             </Helmet>
             <Navbar />
             <div>
-                <h2>Search Results</h2>
+                <h2>{searchTerm}</h2>
                 {loading ? (
                     <LoaderSc /> // Display loader while loading
                 ) : (
                     <>
-                        <h5>{title}</h5>
                         <div className="product-grid">
                             {results.length > 0 ? (
                                 results.map((result) => (
