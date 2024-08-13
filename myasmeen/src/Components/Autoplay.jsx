@@ -10,7 +10,6 @@ function AutoPlay() {
       slidesToShow: 3,
       slidesToScroll: 2,
       autoplay: true,
-      autoplaySpeed: 2000,
   cssEase: 'linear'
     };
   
@@ -19,7 +18,7 @@ function AutoPlay() {
     
     <center><h3 >Featured Designs</h3></center>
     <div className="slider-container" >
-      <Slider {...settings} >
+      <Slider {...settings} > 
         <div>
         <HoverImg
         imageSrc="/slick1.png" 

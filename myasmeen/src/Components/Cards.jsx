@@ -12,7 +12,7 @@ export const Cards = () => {
       </div>
       <div className="col-md-5 " style={{paddingTop:"10px"}}>
       <Image
-              imageSrc="/51.png"
+              imageSrc="/luxpt.png"
                               heading="Amazing Place"
                     subheading="Discover the beauty"
                     buttonText="Learn More"
