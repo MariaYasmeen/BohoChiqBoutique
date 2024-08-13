@@ -108,6 +108,7 @@ export const Product = () => {
                   </>
                 )}
             </button>
+            
           </div>
           <p>
             <span style={{ color: "darkred" }}>Disclaimer:</span> Product color

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { ProductCard } from '../Components/ProductCard';
 import { Navbar } from '../Navbar/Navbar';
+import { Helmet } from 'react-helmet-async';
 import { Footer } from '../Components/Footer';
 import LoaderSc from '../Components/LoaderSc';
 
@@ -11,22 +11,19 @@ const SearchPage = () => {
     const [results, setResults] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    // Ensure searchTerm is a string
     const searchTerm = (location.state?.searchTerm || '').toString();
 
     useEffect(() => {
-        console.log('Search Term in SearchPage:', searchTerm); // Debugging line
-        console.log('Search Results in SearchPage:', location.state?.results); // Debugging line
+        console.log('Search Term:', searchTerm); // Debugging line
+        console.log('Search Results:', location.state?.results); // Debugging line
 
         const searchResults = location.state?.results || [];
         setResults(searchResults);
         setLoading(false);
     }, [location.state?.results]);
 
-    const title = `Search: ${results.length} found for  ${searchTerm} - M.Yasmeen Designs`;
-
-    useEffect(() => {
-        console.log('Setting title to:', title); // Debugging line
-    }, [title]);
+    const title = `Search: ${results.length} found for "${searchTerm}" - M.Yasmeen Designs`;
 
     return (
         <>
@@ -37,7 +34,7 @@ const SearchPage = () => {
             <div>
                 <h2>Search Results</h2>
                 {loading ? (
-                    <LoaderSc />
+                    <LoaderSc /> // Display loader while loading
                 ) : (
                     <>
                         <h5>{title}</h5>

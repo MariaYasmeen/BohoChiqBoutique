@@ -5,6 +5,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToWishlist, delFromWishlist } from "../Redux/WishlistSlice";
 import useFetchCollection from "../Utils/useFetchCollection";
 import { AddInWishList } from "../Functions/AddInWishList";
+import { useTitle } from "../Context/TitleContext";
+import ButtonFlip from "../Animations/ButtonFlip";
+
 
 export const ProductCard = ({
   id,
@@ -33,6 +36,12 @@ export const ProductCard = ({
   const { data: products, loading, error } = useFetchCollection(collectionName);
   const item = products.find((prod) => prod.id === id);
 
+  const { setTitle } = useTitle(); // Get the setTitle function from the context
+
+  useEffect(() => {
+    setTitle(`${title} - M.Yasmeen`); // Set the page title dynamically
+  }, [title, setTitle]);
+
   const toggleWishlist = () => {
     if (isInWishlist) {
       dispatch(delFromWishlist(item)); // Remove item from Redux store
@@ -49,7 +58,6 @@ export const ProductCard = ({
   return (
     <>
       <Helmet>
-        <title>{title} - M.Yasmeen</title>
         <meta name="description" content={`See new Collection for Men.`} />
       </Helmet>
       <div
@@ -61,9 +69,8 @@ export const ProductCard = ({
           <Link to={`/product/${slug}`} state={{ collectionName }}>
             <img src={isHovered ? image2 : image1} alt={title} />
             {isHovered && (
-              <button className="buy-button" onClick={handleQuickView}>
-                QUICK VIEW
-              </button>
+               <ButtonFlip frontText="Customer Favorite" backText="Quick View" className="buy-button" onClick={handleQuickView}/>
+              
             )}
           </Link>
 

@@ -1,57 +1,33 @@
 import React, { useState } from 'react';
-import { auth } from "../Utils/firebaseConfig";
-import LoaderSc from '../Components/LoaderSc';
-import { signInWithEmailAndPassword } from 'firebase/auth';  // Correct import
+import { useAuth } from '../Context/UserAuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import "./Register.css";
 
 function SignIn() {
-  // State variables
-  const [loading, setLoading] = useState(false);
-  const [email, setEmail] = useState("");  // Changed variable name to email
-  const [password, setPassword] = useState("");  // Changed variable name to password
-  const [error, setError] = useState(null); // Added error state
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState(null);
 
+  const { signIn, loading } = useAuth();
   const navigate = useNavigate();
 
-  // Sign in function
-  const signIn = async (e) => {
-    e.preventDefault();  // Prevent default form submission
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setError(null);
     try {
-      setLoading(true); // Start loading
-      setError(null); // Clear previous errors
-
-      // Sign in using Firebase
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log('User signed in:', result.user);
-
-      // Save user info to localStorage
-      localStorage.setItem("user", JSON.stringify(result.user));
-
-      // Navigate to home or another page on successful sign-in
+      await signIn(email, password);
       navigate("/");
-
     } catch (error) {
-      console.log('Sign-in error:', error);
-
-      // Update error state
-      setError("Invalid email or password. Please try again.");
-
-    } finally {
-      // Stop loading
-      setLoading(false);
+      setError(error.message);
     }
   };
 
   return (
-    <div className="signupcss"> {/* Updated class name */}
-      {loading && <LoaderSc />} {/* Render Loader conditionally */}
-      <main className="signin-css"> {/* Updated class name */}
-        <form onSubmit={signIn}>
+    <div className="signupcss">
+      <main className="signin-css">
+        <form onSubmit={handleSubmit}>
           <h1 className="h6 mb-3 fw-normal">Please Sign In</h1>
 
-          {/* Show error message */}
           {error && <div className="alert alert-danger">{error}</div>}
 
           <div className="form-floating">
@@ -98,7 +74,6 @@ function SignIn() {
             {loading ? "Signing In..." : "Sign In"}
           </button>
 
-          {/* Link to register page */}
           <h6 style={{ marginTop: "20px" }}>
             Don't have an account? <Link to='/account/register'>Sign Up</Link>
           </h6>
@@ -108,6 +83,6 @@ function SignIn() {
       </main>
     </div>
   );
-};
+}
 
 export default SignIn;

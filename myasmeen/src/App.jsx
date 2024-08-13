@@ -17,15 +17,17 @@ import SignIn from "./Register/SignIn";
 import AddNewCollection from "./FBDatabase/AddNewCollection";
 import Kidswear from "./Pages/Kidswear";
 import './App.css';
-import UpdateCollection from "./FBDatabase/UpdateCollection";
+import { updateDataInCollection } from "./Utils/firebaseUtils";
 import { Cart } from "./Pages/Cart";
 import Account from "./Register/Account";
 import { MyWishList } from "./Pages/MyWishList";
 import SearchPage from "./Search/SearchPage";
+import { UserAuthProvider } from "./Context/UserAuthContext";
 
 const App = () => {
   return (
     <BrowserRouter>
+    <UserAuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/kidswear" element={<Kidswear />} />
@@ -36,7 +38,7 @@ const App = () => {
         <Route path="/admindashboard/addnewcollection" element={<AddNewCollection />} />
         <Route path="/admindashboard/updatecollection" element={
          <AdminRoute>
-         <UpdateCollection />
+         <updateDataInCollection />
        </AdminRoute>
           } />
         <Route path="/register" element={<Register />} />
@@ -54,6 +56,7 @@ const App = () => {
         <Route path="/menswear" element={<Menswear />} />
         <Route path="/product/:title" element={<Product />} />
       </Routes>
+      </UserAuthProvider>
     </BrowserRouter>
   );
 };
