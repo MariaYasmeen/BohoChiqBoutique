@@ -56,7 +56,7 @@
 
   .type--A{
     --line_color : black ;
-    --back_color : #FFECF6  ;
+    --back_color : lightpink  ;
   }
 
   .button{
@@ -66,10 +66,11 @@
       height : 56px ;
       text-decoration : none ;
       font-size : 14px ; 
+      text-transform: uppercase;
       font-weight : bold ;
       color : var(--line_color) ;
       letter-spacing : 2px ;
-      transition : all .3s ease ;
+      transition : all 0.1s ease ;
   }
   .button__text{
       display : flex ;
@@ -77,6 +78,7 @@
       align-items : center ;
       width : 100% ;
       height : 100% ;
+      font-size: 16px;
   }
   .button::before,
   .button::after,
@@ -149,22 +151,22 @@
   .button__drow2{
       position : absolute ;
       z-index : -1 ;
-      border-radius : 16px ;
-      transform-origin : 16px 16px ;
+      border-radius : 46px ;
+      transform-origin : 29px 0px ;
   }
   .button__drow1{
-      top : -16px ;
-      left : 40px ;
+      top : -10px ;
+      left : 36px ;
       width : 32px ;
       height : 0;
-      transform : rotate( 30deg ) ;
+      transform : rotate( -5deg ) ;
   }
   .button__drow2{
-      top : 44px ;
-      left : 77px ;
+      top : 76px ;
+      left : 70px ;
       width : 32px ;
       height : 0 ;
-      transform : rotate(-127deg ) ;
+      transform : rotate(-145deg ) ;
   }
   .button__drow1::before,
   .button__drow1::after,
@@ -180,7 +182,7 @@
       height : 32px ;
       border-radius : 16px ;
       transform-origin : 16px 16px ;
-      transform : rotate( -60deg ) ;
+      transform : rotate( -57deg ) ;
   }
   .button__drow1::after{
       top : -10px ;
@@ -189,7 +191,7 @@
       height : 32px ;
       border-radius : 16px ;
       transform-origin : 16px 16px ;
-      transform : rotate( 69deg ) ;
+      transform : rotate( 80deg ) ;
   }
   .button__drow2::before{
       bottom : 0 ;
@@ -198,16 +200,16 @@
       height : 32px ;
       border-radius : 16px ;
       transform-origin : 16px 16px ;
-      transform : rotate( -146deg ) ;
+      transform : rotate( -140deg ) ;
   }
   .button__drow2::after{
-      bottom : 26px ;
-      left : -40px ;
+      bottom : 45px ;
+      left : -55px ;
       width : 0 ;
       height : 32px ;
       border-radius : 16px ;
       transform-origin : 16px 16px ;
-      transform : rotate( -262deg ) ;
+      transform : rotate( 100deg ) ;
   }
   .button__drow1,
   .button__drow1::before,
@@ -243,37 +245,34 @@
   }
   @keyframes drow1{
       0%   { height : 0 ; }
-      100% { height : 100px ; }
+      100% { height : 77px ; }
   }
   @keyframes drow2{
       0%   { width : 0 ; opacity : 0 ;}
       10%  { opacity : 0 ;}
       11%  { opacity : 1 ;}
-      100% { width : 120px ; }
+      100% { width : 100px ; }
   }
   @keyframes drow3{
       0%   { width : 0 ; }
-      100% { width : 80px ; }
+      100% { width : 100px ; }
   }
   @keyframes drow4{
       0%   { height : 0 ; }
-      100% { height : 120px ; }
+      100% { height : 124px ; }
   }
   @keyframes drow5{
       0%   { width : 0 ; }
-      100% { width : 124px ; }
+      100% { width : 50px ; }
   }
 
  
   /* 係ないスタイル */
   .container{
       width : 100% ;
-      height : 300px ;
+      height : 70px ;
       display : flex ;
       flex-direction : column ;
       justify-content : center ;
       align-items : center ;
-  }
-  .button:not(:last-child){
-    margin-bottom : 64px ;
   }
