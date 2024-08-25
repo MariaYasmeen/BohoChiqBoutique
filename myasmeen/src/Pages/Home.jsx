@@ -40,7 +40,6 @@
     </button>
   </div>
   <Cards />
-  <Footer />
       </>
     );yoe
   };
