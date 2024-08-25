@@ -17,32 +17,39 @@ import SignIn from "./Register/SignIn";
 import AddNewCollection from "./FBDatabase/AddNewCollection";
 import Kidswear from "./Pages/Kidswear";
 import './App.css';
-import { updateDataInCollection } from "./Utils/firebaseUtils";
+import { UserAuthProvider } from "./Context/UserAuthContext";
+import UpdateCollection from "./FBDatabase/UpdateCollection";
 import { Cart } from "./Pages/Cart";
 import Account from "./Register/Account";
+import { TitleProvider } from "./Context/TitleContext";
 import { MyWishList } from "./Pages/MyWishList";
 import SearchPage from "./Search/SearchPage";
-import { UserAuthProvider } from "./Context/UserAuthContext";
+import Couture from "./Pages/Couture";
+import ReadyToWear from "./Pages/ReadyToWear";
 
 const App = () => {
   return (
     <BrowserRouter>
-    <UserAuthProvider>
+     <TitleProvider>
+     <UserAuthProvider>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/kidswear" element={<Kidswear />} />
         <Route path="/jewelry" element={<Jewelry />} />
-       <Route path="/search" element={<SearchPage />} />
+        <Route path="/couture" element={<Couture />} />
+        <Route path="/search" element={<SearchPage />} />
         <Route path="/account/*" element={<Account />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/ready-to-wear/:category" element={<ReadyToWear />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/mywishlist" element={<MyWishList />} />
         <Route path="/admindashboard/addnewcollection" element={<AddNewCollection />} />
         <Route path="/admindashboard/updatecollection" element={
          <AdminRoute>
-         <updateDataInCollection />
+         <UpdateCollection />
        </AdminRoute>
           } />
-        <Route path="/register" element={<Register />} />
-        <Route path="/signin" element={<SignIn />} />
+      
         <Route path="/admindashboard" element={
           <AdminRoute>
             <AdminDashboard />
@@ -57,6 +64,7 @@ const App = () => {
         <Route path="/product/:title" element={<Product />} />
       </Routes>
       </UserAuthProvider>
+      </TitleProvider>
     </BrowserRouter>
   );
 };
