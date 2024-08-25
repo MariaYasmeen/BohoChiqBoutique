@@ -67,6 +67,14 @@ const wishlistItems = useSelector((state) => state.wishlist);
           >FOR CUSTOMIZATIONS OR PERSONAL ASSISTANCE, WHATSAPP US AT | +9221111627422
           </Link>
         </div>
+        <div className="mx-5">
+          <Link
+            to=""
+            className="text-decoration-none"
+            style={{ color: "white" }}
+          >myasmeen@gmail.com
+          </Link>
+        </div>
       </div>
 
       <div className="fa-iconcss">
@@ -99,23 +107,20 @@ const wishlistItems = useSelector((state) => state.wishlist);
           </div>
           <div className="col text-center fa-iconcss">
            
-            {user && user.email !== "mariyayasmeen000@gmail.com" ? (
-        <Link to="/mywishlist" className="text-decoration-none position-relative">
-            <i className="fa-regular fa-heart"></i>
-            <span className="cart-badge">{wishlistItems.length}</span>
-        </Link>
-      ) : (
-        "" 
-      )}
-      
-            {user && user.email !== "mariyayasmeen000@gmail.com" ? (
-        <Link to="/cart" className="text-decoration-none position-relative">
-         <i  class="fa-solid fa-bag-shopping"></i>
-          <span className="cart-badge">{cartItems.length}</span>
-        </Link>
-      ) : (
-        "" 
-      )}
+          {!(user && user.email === "mariyayasmeen000@gmail.com") && (
+  <>
+    <Link to="/mywishlist" className="text-decoration-none position-relative">
+      <i className="fa-regular fa-heart"></i>
+      <span className="cart-badge">{wishlistItems.length}</span>
+    </Link>
+
+    <Link to="/cart" className="text-decoration-none position-relative">
+      <i className="fa-solid fa-bag-shopping"></i>
+      <span className="cart-badge">{cartItems.length}</span>
+    </Link>
+  </>
+)}
+
 
             <Link to="/account/*" className="text-decoration-none">
               <i className="fa-regular fa-user"></i>
@@ -147,13 +152,13 @@ const wishlistItems = useSelector((state) => state.wishlist);
             id="navbarsExample08"
           >
             <ul className="navbar-nav nav ulcss nav-links">
-            <li className="nav-item">
+            <li className=" link-hover" >
                 <Link to ="" className="nav-link active" aria-current="page"   >
                   new arrivals
                 </Link>
               </li>
           
-              <li className="nav-item dropdown">
+              <li className=" link-hover dropdown">
                 <Link to =""
                   className="nav-link dropdown-toggle"     
                   data-bs-toggle="dropdown"
@@ -163,43 +168,43 @@ const wishlistItems = useSelector((state) => state.wishlist);
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link to ="" className="dropdown-item"   >
+                    <Link to ="" className="dropdown-item "   >
                       <img src={slick2} style={{ width: "270px" }} alt="Dropdown Item" />
                     </Link>
                   </li>
                   <li>
-                    <Link to ="" className="dropdown-item"   >
-                      Action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to ="" className="dropdown-item"   >
-                      Another action
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to ="" className="dropdown-item"   >
-                      Something else here
-                    </Link>
-                  </li>
+      <Link to="ready-to-wear/luxury-formals" className="dropdown-item">
+        Luxury Formals
+      </Link>
+    </li>
+    <li>
+      <Link to="ready-to-wear/luxury-pret" className="dropdown-item">
+        Luxury Pret
+      </Link>
+    </li>
+    <li>
+      <Link to="ready-to-wear/mommy-and-me" className="dropdown-item">
+        Mommy & Me
+      </Link>
+    </li>
                 </ul>
               </li>
-              <li className="nav-item">
+              <li className="nav-item link-hover ">
                 <Link to ="/kidswear" className="nav-link active" aria-current="page" >
                   kids
                 </Link>
               </li>
-              <li className="nav-item">
+              <li className="nav-item link-hover ">
                 <Link to ="/menswear" className="nav-link active" aria-current="page" >
                   menswear
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link to ="" className="nav-link active" aria-current="page"   >
+              <li className="nav-item link-hover ">
+                <Link to ="/couture" className="nav-link active" aria-current="page"   >
                   couture
                 </Link>
               </li>
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown link-hover ">
                 <Link to ="/bridal"
                   className="nav-link dropdown-toggle" 
                   data-bs-toggle="dropdown"
@@ -230,11 +235,11 @@ const wishlistItems = useSelector((state) => state.wishlist);
                   </li>
                 </ul>
               </li>
-              <li className="nav-item">
+              <li className="nav-item link-hover">
                 <Link to ="" className="nav-link">jewelry</Link>
               </li>
     
-              <li className="nav-item dropdown">
+              <li className="nav-item dropdown link-hover">
                 <Link to =""
                   className="nav-link dropdown-toggle"
                     
@@ -267,7 +272,7 @@ const wishlistItems = useSelector((state) => state.wishlist);
                 </ul>
               </li>
               {user?.email === "mariyayasmeen000@gmail.com" && (
-        <li className="nav-item">
+        <li className="nav-item link-hover">
           <Link to="/admindashboard" className="nav-link">Dashboard</Link>
         </li>
       )}
@@ -277,14 +282,12 @@ const wishlistItems = useSelector((state) => state.wishlist);
         </div>
       </nav>
       {searchVisible && (
-        <div className="search-navbar">
           <div className="container">
             <SearchBar 
             searchTerm={searchTerm} 
             onSearch={handleSearch} 
             onChange={(e) => setSearchTerm(e.target.value)}/>
           </div>
-        </div>
       )}
     </>
   );
