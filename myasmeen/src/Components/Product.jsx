@@ -10,6 +10,7 @@ import { Footer } from "./Footer";
 import { useDispatch, useSelector } from 'react-redux';
 import { AddInWishList } from "../Functions/AddInWishList";
 import ProductSlider from "../ImgSliders/ProductSlider";
+import "./Components.css"; // Import your CSS file for custom styles
 
 export const Product = () => {
   const { title } = useParams();
@@ -29,7 +30,7 @@ export const Product = () => {
   }
 
   if (error) {
-    return <div>{error}</div>;
+    return <div className="error-message">{error}</div>;
   }
 
   const createSlug = (text) => {
@@ -39,7 +40,7 @@ export const Product = () => {
   const item = products.find((prod) => prod.title && createSlug(prod.title) === title);
 
   if (!item) {
-    return <div>Product not found</div>;
+    return <div className="product-not-found">Product not found</div>;
   }
 
   const { image1, image2, image3, title: itemTitle, price, desc, id } = item;
@@ -59,10 +60,11 @@ export const Product = () => {
     dispatch(addToCart(product));
     console.log("Product added to the cart");
   };
+
   const images = [
- ` ${image1}`,  
- ` ${image2}`,
-  ` ${image3}`,
+    `${image1}`,
+    `${image2}`,
+    `${image3}`,
   ];
 
   return (
@@ -72,63 +74,56 @@ export const Product = () => {
         <meta name="description" content={`Buy ${itemTitle} for PKR ${price}.`} />
       </Helmet>
       <Navbar />
-      <div className="prodslidercss">
-      <div className="prodimg">
-         <ProductSlider images={images} />
-         </div>
-         <div className="proddesc">
-   
-        <div className="">
-          <h4 style={{ fontWeight: "600" }}>{itemTitle}</h4>
-          <p>JS-026-GOLD | IN STOCK</p>
-
-          <h7 style={{ color: "darkred" }}>SAVE 20%</h7>
-          <h5 style={{ fontWeight: "900", letterSpacing: "2px" }}>
-            PKR {price}
-          </h5>
-          <p>GST Inclusive</p>
-          <div className="cont2btns">
+      <div className="product-container">
+        <div className="product-image-container">
+          <ProductSlider images={images} />
+        </div>
+        <div className="product-description-container">
+          <h1 className="product-title">{itemTitle}</h1>
+          <p className="product-code">JS-026-GOLD | IN STOCK</p>
+          <h3 className="product-save">SAVE 20%</h3>
+          <h2 className="product-price">PKR {price}</h2>
+          <p className="product-gst">GST Inclusive</p>
+          <div className="product-buttons-container">
             <button 
-              style={{ backgroundColor: "black", color: "white" }}
+              className="product-add-to-bag"
               onClick={() => handleAddCart(item)}
             >
-              ADD TO BAG<i style={{marginLeft:"10px"}} class="fa-solid fa-bag-shopping"></i>
+              ADD TO BAG<i className="fas fa-bag-shopping"></i>
             </button>
-            <button onClick={handleWishlist}>
+            <button onClick={handleWishlist} className="product-wishlist-button">
               {isInWishlist ? (
                 <>
-                Remove from Wishlist 
-                <i style={{marginLeft:"6px"}}  className={`fa-heart fa-solid`}/>
-
-                </> 
-                ) : (
-                  <>
+                  Remove from Wishlist
+                  <i className={`fas fa-heart`} />
+                </>
+              ) : (
+                <>
                   Add to Wishlist
-                  <i style={{marginLeft:"6px"}}  className={`fa-heart fa-regular`}/>
-                  </>
-                )}
+                  <i className={`far fa-heart`} />
+                </>
+              )}
             </button>
-            
           </div>
-          <p>
-            <span style={{ color: "darkred" }}>Disclaimer:</span> Product color
-            may vary slightly due to photographic lighting or your device
-            settings.
+          <p className="product-disclaimer">
+            <span className="disclaimer-highlight">Disclaimer:</span> Product color may vary slightly due to photographic lighting or your device settings.
           </p>
-          <p className="fa-iconcss"><i class="fa-solid fa-ship "></i>3 to 5 Working Days Nationwide Shipping</p>
-          <hr />
-          <h5 style={{ fontWeight: "900" }}>Description</h5>
-          <p style={{ fontSize: "14px", letterSpacing: "1px" }}>{desc}</p>
-          <h7>
-            <Link to="" style={{ color: "black" }}>
+          <p className="product-shipping">
+            <i className="fas fa-ship"></i> 3 to 5 Working Days Nationwide Shipping
+          </p>
+          <hr className="product-divider" />
+          <h2 className="product-description-title">Description</h2>
+          <p className="product-description-text">{desc}</p>
+          <p className="product-shipping-link">
+            <Link to="" className="product-shipping-details-link">
               Click Here
             </Link>{" "}
             to get more details on our shipping & delivery policies.
-          </h7>
+          </p>
         </div>
-        </div>
-        </div>
-      <Footer />
+      </div>
     </>
   );
 };
+
+export default Product;
