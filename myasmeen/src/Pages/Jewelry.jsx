@@ -1,12 +1,17 @@
-// src/components/Pages.jsx
-
 import React from "react";
-import fecthCollData from "../Utils/fetchCollData";
+import { useParams, useNavigate } from "react-router-dom";
+import useFetchData from "../Utils/useFetchData";
 import { ProductCard } from "../Components/ProductCard";
+import { Navbar } from "../Navbar/Navbar";
+import { Footer } from "../Components/Footer";
 import LoaderSc from "../Components/LoaderSc";
+import { Helmet } from "react-helmet-async";
+import { Filter } from "../Components/Filter";
 
 const Jewelry = () => {
-  const { data: products, loading, error } = fecthCollData("jewelry");
+  const { category } = useParams();
+  const navigate = useNavigate();
+  const { data: products, loading, error, showLoader } = useFetchData(category);
 
   if (loading) {
     return <LoaderSc />;
@@ -16,26 +21,36 @@ const Jewelry = () => {
     return <div>{error}</div>;
   }
 
+  // Function to handle category change and update URL
+  const handleCategoryChange = (newCategory) => {
+    navigate(`/${newCategory}`);
+  };
+
   return (
-    <>
-    <Helmet>
-        <title>Jewelry | M.Yasmeen</title>
+    <div>
+      <Helmet>
+        <title>Ready To Wear - {category} - M.Yasmeen</title>
+        <meta name="description" content={`Explore new Ready To Wear Collection. Now Available Online and in Stores`} />
       </Helmet>
-    <div className="product-grid">
-      {products.map((product) => (
-        <ProductCard
-          key={product.id}
-          id={product.id}
-          image1={product.image1 || "No image"}
-          image2={product.image2 || "No image"}
-          title={product.title || "No Name"}
-          code={product.desc || "No Description"}
-          price={product.price || "No Price"}
-          collectionName="jewelry" // Pass the collection name
-        />
-      ))}
+      <Navbar onCategoryChange={handleCategoryChange} /> {/* Ensure Navbar uses this handler */}
+      <Filter />
+      <h1>{category.replace(/-/g, ' ')}</h1>
+      <div className="product-grid">
+        {products.map((product) => (
+          <ProductCard
+            key={product.id}
+            id={product.id}
+            image1={product.image1 || "No image"}
+            image2={product.image2 || "No image"}
+            title={product.title || "No Name"}
+            code={product.code || "No Code"}
+            price={product.price || "No Price"}
+            collectionName={category}
+          />
+        ))}
+      </div>
+      <Footer />
     </div>
-    </>
   );
 };
 
