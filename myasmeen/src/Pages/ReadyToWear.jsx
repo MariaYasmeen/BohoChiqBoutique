@@ -23,7 +23,7 @@ const ReadyToWear = () => {
 
   // Function to handle category change and update URL
   const handleCategoryChange = (newCategory) => {
-    navigate(`/ready-to-wear/${newCategory}`, { replace: true }); // Replace the current history entry to prevent URL extension
+    navigate(`/${newCategory}`);
   };
 
   return (
@@ -34,7 +34,7 @@ const ReadyToWear = () => {
       </Helmet>
       <Navbar onCategoryChange={handleCategoryChange} /> {/* Ensure Navbar uses this handler */}
       <Filter />
-      <h1>{category.replace(/-/g, ' ')}</h1>
+      <h5 className="text-center" styl={{paddding:"4px"}}>{category.replace(/-/g, ' ')}</h5>
       <div className="product-grid">
         {products.map((product) => (
           <ProductCard
