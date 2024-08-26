@@ -173,17 +173,17 @@ const wishlistItems = useSelector((state) => state.wishlist);
                     </Link>
                   </li>
                   <li>
-      <Link to="ready-to-wear/luxury-formals" className="dropdown-item">
+      <Link to="/luxury-formals" className="dropdown-item">
         Luxury Formals
       </Link>
     </li>
     <li>
-      <Link to="ready-to-wear/luxury-pret" className="dropdown-item">
+      <Link to="/luxury-pret" className="dropdown-item">
         Luxury Pret
       </Link>
     </li>
     <li>
-      <Link to="ready-to-wear/mommy-and-me" className="dropdown-item">
+      <Link to="/mommy-and-me" className="dropdown-item">
         Mommy & Me
       </Link>
     </li>
@@ -204,13 +204,18 @@ const wishlistItems = useSelector((state) => state.wishlist);
                   couture
                 </Link>
               </li>
+
+              <li className="nav-item link-hover">
+                <Link to ="/bridal" className="nav-link">Bridals</Link>
+              </li>
+
               <li className="nav-item dropdown link-hover ">
-                <Link to ="/bridal"
+                <Link to ="/jewelry"
                   className="nav-link dropdown-toggle" 
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Bridal
+                  jewelry
                 </Link>
                 <ul className="dropdown-menu">
                   <li>
@@ -219,25 +224,26 @@ const wishlistItems = useSelector((state) => state.wishlist);
                     </Link>
                   </li>
                   <li>
-                    <Link to ="" className="dropdown-item"   >
-                      Action
+                    <Link to ="/earings" className="dropdown-item"   >
+                      Earrings
                     </Link>
                   </li>
                   <li>
-                    <Link to ="" className="dropdown-item"   >
-                      Another action
+                    <Link to ="/tikka-jhoomer" className="dropdown-item"   >
+                      Tikka/Jhoomer
                     </Link>
                   </li>
                   <li>
-                    <Link to ="" className="dropdown-item"   >
-                      Something else here
+                    <Link to ="/rings" className="dropdown-item"   >
+                      Rings
+                    </Link>
+                    <Link to ="/piece-sets" className="dropdown-item"   >
+                      2/3 Piece Sets
                     </Link>
                   </li>
                 </ul>
               </li>
-              <li className="nav-item link-hover">
-                <Link to ="" className="nav-link">jewelry</Link>
-              </li>
+              
     
               <li className="nav-item dropdown link-hover">
                 <Link to =""
